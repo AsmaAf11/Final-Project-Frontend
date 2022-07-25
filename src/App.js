@@ -7,19 +7,16 @@ import Cards from './components/Categories/Cards';
 import Login from './components/registration/Login';
 import Signup from './components/registration/Signup';
 
-
-
-
-
 function App() {
   return (
     <div className="App">
 
-    <Header/>
 <Container>
         <Router>
           <Routes>
+
             <Route>
+            <Route path='/Header' element={<Header/>}></Route>
             <Route path='/' element={<Home/>}></Route>
               <Route path='/categories' element={<Cards/>}></Route>
               <Route path='/login' element={<Login/>}></Route>

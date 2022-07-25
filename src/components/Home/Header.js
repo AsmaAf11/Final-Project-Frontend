@@ -20,7 +20,7 @@ function Header() {
         <div class="header1">
         
       <Navbar  variant="dark" className="Nav">
-            <img src={resume}  width="40" height="45" className='homeicon'/>
+           
         <Container >
           
           <Navbar.Brand href="/">Home</Navbar.Brand>

@@ -8,6 +8,7 @@ import Cards from './components/Categories/Cards';
 import Login from './components/registration/Login';
 import Signup from './components/registration/Signup';
 import ArticleByCategory from './components/Categories/ArticleByCategory';
+import Top5 from './components/Top5';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/Footer' element={<Footer/>}></Route>
 
             <Route path='/' element={<Home/>}></Route>
+            <Route path='/top' element={<Top5/>}></Route>
 
               <Route path='/Cards' element={<Cards/>}></Route>
               <Route path='/articlesCategories' element={<ArticleByCategory/>}></Route>

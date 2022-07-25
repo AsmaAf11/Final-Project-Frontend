@@ -23,6 +23,12 @@ const login = () => {
       localStorage.setItem("id", res.data.id);
       localStorage.setItem("username", res.data.username);
       navigate("/");
+    //   if (res.status === 200) {
+    //     localStorage.setItem("token", res.data.token);
+    //     navigate("/");
+    //     window.location.reload()
+    //   }
+    // })
     })
     .catch((error) => {
       console.log(error);
@@ -31,7 +37,7 @@ const login = () => {
 
   return (
     <>
-    {/* <div classNameName='con'>
+    {/* <div className='con'>
       <input placeholder="username" onChange={(e)=>{setUsername(e.target.value)}}></input>
       <input placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}></input>
       <button onClick={login}>Login</button> </div> */}
@@ -39,12 +45,12 @@ const login = () => {
 <section className="background-radial-gradient overflow-hidden">
   <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
     <div className="row gx-lg-5 align-items-center mb-5">
-      <div className="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-        <h1 className="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+      <div className="col-lg-6 mb-5 mb-lg-0" >
+        <h1 className="my-5 display-5 fw-bold ls-tight" >
           The best offer <br />
-          <span style="color: hsl(218, 81%, 75%)">for your business</span>
+          <span >for your business</span>
         </h1>
-        <p className="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+        <p className="mb-4 opacity-70" >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           Temporibus, expedita iusto veniam atque, magni tempora mollitia
           dolorum consequatur nulla, neque debitis eos reprehenderit quasi

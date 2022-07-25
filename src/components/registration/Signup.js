@@ -22,7 +22,7 @@ function Signup() {
             password,
             email
         }).then(res=>{console.log(res);
-            navigate("/Login");
+            navigate("/");
             })
             .catch(err=>{console.log(err)})
 
@@ -32,7 +32,7 @@ function Signup() {
       <input placeholder="username" onChange={(e)=>{setUsername(e.target.value)}}></input>
       <input placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}></input>
       <input placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}></input>
-      <button onClick={postData}>Register</button>
+      <button onClick={postData}>Signup</button>
 
     </div>
   )

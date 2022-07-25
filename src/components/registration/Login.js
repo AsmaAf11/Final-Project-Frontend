@@ -14,27 +14,25 @@ function Login() {
     setPassword(localStorage.getItem("password"));
 },[])
 //http://localhost/:8000/login/
-const postData =()=>{
-  axios.post ('http://127.0.0.1:8000/login/',{
-      username,
-      password,
-    
-  }).then(res=>{
-    console.log(res.data);
-
-
-      navigate("/Home");
-      })
-
-      // .catch(err=>{console.log(err)})
-
-}
+const login = () => {
+  axios
+    .post(`http://127.0.0.1:8000/login/`, { username, password })
+    .then((res) => {
+      console.log(res);
+      localStorage.setItem("id", res.data.id);
+      localStorage.setItem("username", res.data.username);
+      navigate("/");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
   return (
     <>
     <div className='con'>
       <input placeholder="username" onChange={(e)=>{setUsername(e.target.value)}}></input>
       <input placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}></input>
-      <button onClick={postData}>Login</button> </div>
+      <button onClick={login}>Login</button> </div>
     </>
   )
 }

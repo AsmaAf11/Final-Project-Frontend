@@ -24,19 +24,19 @@ function ArticleByCategory() {
   }, []);
 
   return (
-    <div>
+    <div className="cardsRow">
       {data.map((e) => {
         return (
           <Container className="pt-5">
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "30rem" }}>
               <Card.Img
                 style={{ width: "100%", height: "350px" }}
                 variant="top"
                 src={e.image}
               />
               <Card.Body>
-                <Card.Title>{e.title}</Card.Title>
-                <Card.Text>{e.summary}</Card.Text>
+                <Card.Title className="cardTitleText">{e.title}</Card.Title>
+                <Card.Text className="cardParagraphText">{e.summary}</Card.Text>
                 <Card.Text>Likes: {e.likes}</Card.Text>
                 <Card.Footer className="text-muted">
                   Publisehd at: {e.created_at} by {e.publisher}

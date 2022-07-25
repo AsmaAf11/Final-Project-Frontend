@@ -15,14 +15,12 @@ function App() {
 <Container>
         <Router>
           <Routes>
-
             <Route>
             <Route path='/Header' element={<Header/>}></Route>
             <Route path='/' element={<Home/>}></Route>
               <Route path='/categories' element={<Cards/>}></Route>
               <Route path='/login' element={<Login/>}></Route>
               <Route path='/signup' element={<Signup/>}></Route>
-              
             </Route>
           </Routes>
         </Router>

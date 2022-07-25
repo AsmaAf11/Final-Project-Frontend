@@ -1,7 +1,6 @@
 import './App.css';
-
-import Header from './components/Home/Header'
-
+import Header from './components/Home/Header';
+import Home from './components/Home/Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {Container} from "react-bootstrap"
 import Cards from './components/Categories/Cards';
@@ -10,17 +9,18 @@ import Signup from './components/registration/Signup';
 
 
 
+
+
 function App() {
   return (
     <div className="App">
 
     <Header/>
-
-
 <Container>
         <Router>
           <Routes>
             <Route>
+            <Route path='/' element={<Home/>}></Route>
               <Route path='/categories' element={<Cards/>}></Route>
               <Route path='/login' element={<Login/>}></Route>
               <Route path='/signup' element={<Signup/>}></Route>

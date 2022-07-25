@@ -4,10 +4,6 @@ import Header from './Header.js'
 import Login from '../registration/Login'
 import Signup from '../registration/Signup'
 
-
-
-
-
 import '../App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';

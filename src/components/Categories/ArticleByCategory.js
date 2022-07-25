@@ -46,7 +46,6 @@ function ArticleByCategory() {
             </Card.Text>
             <Card.Footer className="text-muted">Publisehd at: {e.created_at} by {e.publisher}</Card.Footer>
         </Card.Body>
-        
       </Card>
      
     

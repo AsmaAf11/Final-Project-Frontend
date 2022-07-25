@@ -22,7 +22,7 @@ function Signup() {
             password,
             email
         }).then(res=>{console.log(res);
-            navigate("/Login");
+            navigate("/");
             })
             .catch(err=>{console.log(err)})
 

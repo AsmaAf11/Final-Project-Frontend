@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+
+
+/* Header css */
+
+.nav1{
+  align-items: space-around !important;
+  margin-left: 30%;
+
+
+}
+/* Footer css */
+.main-footer{
+ background-image: "https://www.moh.gov.ps/portal/insurance-footer-background/" !important;
+ align-items: space-around;
+}
+.fooerimg{
+  height: 150px;
+  width: 150px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container1{
+  background-color: rgb(171, 196, 203);
+  color: rgb(45, 42, 42);
+  align-items:space-between;
+  padding:15px;
+  padding-left:50px;
+ 
+}
+.Socialimg{
+  height: 35px;
+  width: 35px;
+}
+.socialmedia{
+  display: inline-block;
+  justify-content:flex-start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

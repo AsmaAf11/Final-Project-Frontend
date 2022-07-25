@@ -7,6 +7,8 @@ import {Container} from "react-bootstrap"
 import Cards from './components/Categories/Cards';
 import Login from './components/registration/Login';
 import Signup from './components/registration/Signup';
+import ArticleByCategory from './components/Categories/ArticleByCategory';
+
 
 function App() {
   return (
@@ -14,14 +16,15 @@ function App() {
 
 <Container>
         <Router>
+        <Header/>
           <Routes>
-
             <Route>
             <Route path='/Header' element={<Header/>}></Route>
             <Route path='/Footer' element={<Footer/>}></Route>
 
             <Route path='/' element={<Home/>}></Route>
               <Route path='/categories' element={<Cards/>}></Route>
+              <Route path='/articlesCategories' element={<ArticleByCategory/>}></Route>
               <Route path='/login' element={<Login/>}></Route>
               <Route path='/signup' element={<Signup/>}></Route>
             </Route>

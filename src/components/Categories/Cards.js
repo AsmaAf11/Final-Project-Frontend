@@ -2,7 +2,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
-import {Card, Container} from "react-bootstrap"
+import {Card, Container, Button} from "react-bootstrap"
 
 
 
@@ -12,6 +12,7 @@ function Cards() {
     const navigate = useNavigate();
 
     useEffect (()=>{
+      
         axios
         .get(`http://127.0.0.1:8000/all_categories/`)
         .then((res)=>{
@@ -26,7 +27,13 @@ function Cards() {
     },[])
 
     
- 
+    const getArticleByCategory = (id) =>{
+      
+      localStorage.setItem("id", id);
+  }
+
+
+
 
   return (
     <div>
@@ -38,6 +45,7 @@ function Cards() {
         <Card.Img style={{ width: '100%',height:'350px' }}  variant="top" src={e.image} />
         <Card.Body>
           <Card.Title>{e.name}</Card.Title>
+          <Button onClick={getArticleByCategory}> View Articles </Button>
         </Card.Body>
         
       </Card>

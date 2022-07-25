@@ -5,12 +5,19 @@
   align-items: space-around !important;
   margin-left: 30%;
 
+}
+.raw1{
 
+  padding:100px !important;
+  margin: 100px !important;
 }
 /* Footer css */
 .main-footer{
  background-image: "https://www.moh.gov.ps/portal/insurance-footer-background/" !important;
  align-items: space-around;
+}
+.list-unstyled{
+  display: inline-block
 }
 .fooerimg{
   height: 150px;
@@ -26,13 +33,11 @@
  
 }
 .Socialimg{
-  height: 35px;
-  width: 35px;
+  height: 300px;
+  width: 350px;
+
 }
-.socialmedia{
-  display: inline-block;
-  justify-content:flex-start;
-}
+
 
 
     .background-radial-gradient {
@@ -74,4 +79,3 @@
         background-color: hsla(0, 0%, 100%, 0.9) !important;
         backdrop-filter: saturate(200%) blur(25px);
       }
->>>>>>> a5d0035c250511b8930302ae50eaedbda229b527

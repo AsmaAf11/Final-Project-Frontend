@@ -108,3 +108,14 @@
       transform: scale(1.2);
     }
   
+    .cardTitleText{
+
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    .cardParagraphText{
+
+      text-align: justify;
+    }
+    

@@ -37,17 +37,16 @@ function Cards() {
            
               {data.map((e) =>{
                     return <Container className='pt-5'>
-                      
+                <div onClick={()=> {navigate(`/articlesCategories/${e.id}`)}}>
                 <Card style={{ width: '30rem' }} >
                 <Card.Img style={{ width: '100%',height:'350px' }}  variant="top" src={e.image} />
                 <Card.Body>
-                  <Card.Title>{e.name}</Card.Title>
-                  {/* <Link to="/articlesCategories" > */}
-                  <Button onClick={()=> {navigate(`/articlesCategories/${e.id}`)}}> View Articles </Button>
-                  {/* </Link */}
+                  <Card.Title className='cardTitleText'>{e.name}</Card.Title>
                 </Card.Body>
                 
               </Card>
+              </div>
+              
             
 
                     </Container>

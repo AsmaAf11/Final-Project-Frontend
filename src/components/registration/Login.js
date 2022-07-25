@@ -23,7 +23,7 @@ const postData =()=>{
     console.log(res.data);
 
 
-      navigate("/Home");
+      navigate("/");
       })
 
       // .catch(err=>{console.log(err)})

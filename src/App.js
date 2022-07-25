@@ -23,8 +23,14 @@ function App() {
             <Route path='/Footer' element={<Footer/>}></Route>
 
             <Route path='/' element={<Home/>}></Route>
+
               <Route path='/Cards' element={<Cards/>}></Route>
               <Route path='/articlesCategories' element={<ArticleByCategory/>}></Route>
+
+              <Route path='/categories' element={<Cards/>}></Route>
+              {/* <Route exact path='/articlesCategories' element={<ArticleByCategory/>}></Route>   */}
+              <Route path='/articlesCategories/:id' element={<ArticleByCategory/>}></Route>
+
               <Route path='/login' element={<Login/>}></Route>
               <Route path='/signup' element={<Signup/>}></Route>
             </Route>

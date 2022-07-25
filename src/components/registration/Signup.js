@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import './reg.css';
 
 
 function Signup() {
@@ -22,7 +23,7 @@ function Signup() {
             password,
             email
         }).then(res=>{console.log(res);
-            navigate("/");
+            navigate("/Login");
             })
             .catch(err=>{console.log(err)})
 

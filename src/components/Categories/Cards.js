@@ -15,8 +15,8 @@ function Cards() {
         axios
         .get(`http://127.0.0.1:8000/all_categories/`)
         .then((res)=>{
-            console.log(res.data);
-            setData(res.data);
+            console.log(res.data.Categories);
+            setData(res.data.Categories);
         })
         .catch((err)=>{
             console.log(err);

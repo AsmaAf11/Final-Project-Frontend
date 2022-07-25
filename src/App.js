@@ -9,12 +9,14 @@ import AddArticle from "./components/Article/AddArticle";
 import Home from "./components/Home/Home";
 import Footer from './components/Home/Footer';
 import ArticleByCategory from './components/Categories/ArticleByCategory';
+import Top5 from './components/Top5';
 
 
 function App() {
   return (
   <div className="App">
     <Container>
+      <Header/>
       <Router>
         <Routes>
           <Route>
@@ -22,17 +24,24 @@ function App() {
             <Route path='/Header' element={<Header/>}></Route>
             <Route path='/Footer' element={<Footer/>}></Route>
             <Route path='/' element={<Home/>}></Route>
-            <Route path='/Cards' element={<Cards/>}></Route>
-            <Route path='/articlesCategories' element={<ArticleByCategory/>}></Route>
-            <Route path='/categories' element={<Cards/>}></Route>
-            {/* <Route exact path='/articlesCategories' element={<ArticleByCategory/>}></Route>   */}
-            <Route path='/articlesCategories/:id' element={<ArticleByCategory/>}></Route>
-            <Route path='/login' element={<Login/>}></Route>
-            <Route path='/signup' element={<Signup/>}></Route>
+            <Route path='/top' element={<Top5/>}></Route>
+
+              <Route path='/Cards' element={<Cards/>}></Route>
+              <Route path='/articlesCategories' element={<ArticleByCategory/>}></Route>
+
+
+              <Route path='/categories' element={<Cards/>}></Route>
+              {/* <Route exact path='/articlesCategories' element={<ArticleByCategory/>}></Route>   */}
+              <Route path='/articlesCategories/:id' element={<ArticleByCategory/>}></Route>
+
+              <Route path='/login' element={<Login/>}></Route>
+
+              <Route path='/signup' element={<Signup/>}></Route>
             </Route>
             </Routes>
         </Router>
       </Container>
+      <Footer/>
     </div>
   );
 }

@@ -35,7 +35,7 @@ function Header() {
                   />
                 </svg>
               </Nav.Link>
-              <Nav.Link href="/login">
+              <Nav.Link href="/logout">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -54,6 +54,7 @@ function Header() {
                   />
                 </svg>
               </Nav.Link>
+        
             </Nav>
           </Navbar.Collapse>
         </Container>

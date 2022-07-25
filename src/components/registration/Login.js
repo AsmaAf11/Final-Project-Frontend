@@ -6,6 +6,8 @@ import './reg.css';
 function Login() {
   const [username,setUsername] = useState('')
   const [password,setPassword] = useState('')
+  const [loading, setLoading] = useState(true);
+
 
   const navigate = useNavigate()
 
@@ -13,6 +15,14 @@ function Login() {
     setUsername(localStorage.getItem("username"));
     setPassword(localStorage.getItem("password"));
 },[])
+
+useEffect(() => {
+  if (localStorage.getItem('token') !== null) {
+    navigate("/");
+  } else {
+    setLoading(false);
+  }
+}, []);
 
 
 const login = () => {
@@ -22,6 +32,7 @@ const login = () => {
       console.log(res);
       localStorage.setItem("id", res.data.id);
       localStorage.setItem("username", res.data.username);
+      localStorage.setItem('token', res.data.token);
       navigate("/");
     //   if (res.status === 200) {
     //     localStorage.setItem("token", res.data.token);

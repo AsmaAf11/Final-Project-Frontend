@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Article.css";
+import { useParams } from "react-router-dom";
+
 
 export default function AddArticle() {
   document.title = "Add Article";
@@ -15,9 +17,11 @@ export default function AddArticle() {
   const [content, setContent] = useState();
   const [publisher, setPublisher] = useState();
 
+  const { id } = useParams();
+
   
   const addArticle = () => {
-    setPublisher("1")
+    setPublisher(id)
     axios
       .post(`http://127.0.0.1:8000/add_article/`, {
         title,

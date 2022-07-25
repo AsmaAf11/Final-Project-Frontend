@@ -16,7 +16,7 @@ function App() {
 
 <Container>
         <Router>
-        <Header/>
+        {/* <Header/> */}
           <Routes>
             <Route>
             <Route path='/login' element={<Login/>}></Route>
@@ -24,9 +24,19 @@ function App() {
             <Route path='/Footer' element={<Footer/>}></Route>
 
             <Route path='/' element={<Home/>}></Route>
-              <Route path='/categories' element={<Cards/>}></Route>
+
+              <Route path='/Cards' element={<Cards/>}></Route>
               <Route path='/articlesCategories' element={<ArticleByCategory/>}></Route>
+<<<<<<< HEAD
              
+=======
+
+              <Route path='/categories' element={<Cards/>}></Route>
+              {/* <Route exact path='/articlesCategories' element={<ArticleByCategory/>}></Route>   */}
+              <Route path='/articlesCategories/:id' element={<ArticleByCategory/>}></Route>
+
+              <Route path='/login' element={<Login/>}></Route>
+>>>>>>> d5d2e3e459877ba17b168369d055420f3f20abb0
               <Route path='/signup' element={<Signup/>}></Route>
             </Route>
           </Routes>

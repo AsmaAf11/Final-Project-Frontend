@@ -40,9 +40,9 @@ function Cards() {
         <Card.Img style={{ width: '100%',height:'350px' }}  variant="top" src={e.image} />
         <Card.Body>
           <Card.Title>{e.name}</Card.Title>
-          <Link to="/articlesCategories" >
-          <Button onClick={()=> {localStorage.setItem("id", e.id);}}> View Articles </Button>
-          </Link>
+          {/* <Link to="/articlesCategories" > */}
+          <Button onClick={()=> {navigate(`/articlesCategories/${e.id}`)}}> View Articles </Button>
+          {/* </Link */}
         </Card.Body>
         
       </Card>

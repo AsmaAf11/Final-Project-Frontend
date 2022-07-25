@@ -1,5 +1,6 @@
 import {Card, Container, Button} from "react-bootstrap"
 
+
 import React, { useState, useEffect  } from 'react'
 import {useParams} from 'react-router-dom'
 import axios from 'axios';
@@ -9,15 +10,15 @@ import axios from 'axios';
 function ArticleByCategory() {
     const { id } = useParams();
     const [data,setData]= useState([]);
-    const[id1, setId1] = useState();
+    // const[id, setId] = useState();
 
     useEffect (()=>{
-         setId1(localStorage.getItem("id"));
-        console.log(localStorage.getItem("id"));
-        axios.get(`http://127.0.0.1:8000/posted_articles_per_category/${id1}/`)
+        //  setId1(localStorage.getItem("id"));
+        // console.log(localStorage.getItem("id"));
+        axios.get(`http://127.0.0.1:8000/posted_articles_per_category/${id}/`)
         .then((res)=>{
-            console.log(res.data.Articles);
-            setData(res.data.Article);
+            console.log(res.data);
+            setData(res.data.Articles);
         })
         .catch((err)=>{
             console.log(err);
@@ -31,7 +32,6 @@ function ArticleByCategory() {
 
   return (
     <div>
-       {id} 
        
       {data.map((e) =>{
             return <Container className='pt-5'>

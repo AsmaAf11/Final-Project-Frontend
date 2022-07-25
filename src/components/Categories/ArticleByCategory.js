@@ -1,14 +1,8 @@
 import {Card, Container, Button} from "react-bootstrap"
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react'
-import {useNavigate} from 'react-router-dom';
-import axios from 'axios'
-=======
-import React, { useState, useEffect  } from 'react'
-import {useParams} from 'react-router-dom'
-import axios from 'axios';
+import {useParams} from 'react-router-dom';
 
->>>>>>> ecbff63e4742d0bce5b5f3e18239f9f88d864832
+import axios from 'axios'
 
 function ArticleByCategory() {
     const { id } = useParams();

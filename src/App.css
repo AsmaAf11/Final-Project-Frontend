@@ -81,3 +81,31 @@
         background-color: hsla(0, 0%, 100%, 0.9) !important;
         backdrop-filter: saturate(200%) blur(25px);
       }
+
+
+      .cardsRow{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 50px;
+    
+
+    }
+    
+
+    .card:hover {
+      transition: all 0.2s linear;
+    }
+    
+    .overflow {
+      overflow: hidden;
+    }
+    
+    .card-img-top {
+      transform: scale(1);
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .card-img-top:hover {
+      transform: scale(1.2);
+    }
+  

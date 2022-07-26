@@ -10,13 +10,12 @@ function BookMark() {
 
   useEffect(() => {
     const config = {
-      headers: { Authorization: `Bearer ${accessToken}` },
-    };
+      headers: { Authorization: `Bearer ${accessToken}` }}
     axios
-      .get(`http://127.0.0.1:8000/all_articles/`, config)
+      .get(`http://127.0.0.1:8000/all_categories/${config}`)
       .then((res) => {
         console.log(res.data);
-        setData(res.data.Articles);
+        setData(res.data.Categories);
       })
       .catch((err) => {
         console.log(err);
@@ -37,13 +36,13 @@ function BookMark() {
               <Card.Body>
                 <Card.Title>{e.title}</Card.Title>
                 {/* <Link to="/articlesCategories" > */}
-                <Button
+                {/* <Button
                   onClick={() => {
                     navigate(`/ViewDetails/${e.id}`);
                   }}
                 >
                   View Articles
-                </Button>
+                </Button> */}
                 {/* </Link */}
               </Card.Body>
             </Card>

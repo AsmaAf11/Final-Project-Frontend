@@ -19,7 +19,7 @@ import BookMark from'./components/BookMark/BookMark.js'
 function App() {
   return (
     <div className="App">
-      <Container>
+     
         <Header />
         <Router>
           <Routes>
@@ -54,7 +54,7 @@ function App() {
             </Route>
           </Routes>
         </Router>
-      </Container>
+    
       <Footer />
     </div>
   );

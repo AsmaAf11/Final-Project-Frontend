@@ -43,8 +43,8 @@ function Footer() {
             </p>
             <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0' }}>
               <CDBFooterLink href="/">Home</CDBFooterLink>
-              <CDBFooterLink href="/">About Us</CDBFooterLink>
-              <CDBFooterLink href="/">Catagories</CDBFooterLink>
+              <CDBFooterLink  href="/">About Us</CDBFooterLink>
+              <CDBFooterLink  href="/">Catagories</CDBFooterLink>
               <CDBFooterLink href="/">Contact</CDBFooterLink>
             </CDBBox>
           </CDBBox>

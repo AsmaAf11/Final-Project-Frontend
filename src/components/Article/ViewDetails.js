@@ -20,7 +20,19 @@ export default function ViewDetails() {
           console.log(err);
         });
     }, []);
-
+    // comments
+    useEffect(() => {
+      axios
+        .get(`http://127.0.0.1:8000/view_comment/${id}/`)
+        .then((res) => {
+          console.log(res.data);
+          setData(res.data.Comment);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
+    
 
   return (
     <div className="cardsRow">
@@ -44,6 +56,27 @@ export default function ViewDetails() {
               </Card.Body>
             </Card>
           </Container>
+
+
+        );
+      })}
+            {data.map((ec) => {
+        return (
+          <Container className="pt-5">
+            <Card>
+              <Card.Body>
+                <Card.Title className="cardTitleText">Username: {ec.user}</Card.Title>
+                <Card.Text className="cardParagraphText">Comment:<br /> {ec.content}</Card.Text>
+                <Card.Text className="cardParagraphText">Summary:<br />  {ec.summary}</Card.Text>
+  
+                <Card.Footer className="text-muted">
+                  Commented at: {ec.created_at}
+                </Card.Footer>
+              </Card.Body>
+            </Card>
+          </Container>
+
+          
         );
       })}
     </div>

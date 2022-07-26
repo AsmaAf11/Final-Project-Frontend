@@ -1,12 +1,14 @@
 import { Card, Container, Button } from "react-bootstrap";
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import like from '../Home/like.png'
 
 function ArticleByCategory() {
   const { id } = useParams();
   const [data, setData] = useState([]);
+  
+ 
   // const[id, setId] = useState();
 
   useEffect(() => {
@@ -23,7 +25,18 @@ function ArticleByCategory() {
       });
   }, []);
 
+  const SearchHandle = async (event)=>{
+    let key = event.target.value;
+    let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
+    result = await result.json()
+    if(result){
+      setData(result)
+    }
+  }
+
   return (
+    <>
+    <input type="" className="search-box" placeholder="Search" onChange={SearchHandle}/>
     <div className="cardsRow">
       {data.map((e) => {
         return (
@@ -37,7 +50,10 @@ function ArticleByCategory() {
               <Card.Body>
                 <Card.Title className="cardTitleText">{e.title}</Card.Title>
                 <Card.Text className="cardParagraphText">{e.summary}</Card.Text>
-                <Card.Text>Likes: {e.likes}</Card.Text>
+                
+                <div className="likeborder">
+                <Card.Text  ><img className="cardlikeimg" src={like}/> {e.likes}</Card.Text>
+                </div>
                 <Card.Footer className="text-muted">
                   Publisehd at: {e.created_at} by {e.publisher}
                 </Card.Footer>
@@ -46,7 +62,7 @@ function ArticleByCategory() {
           </Container>
         );
       })}
-    </div>
+    </div></>
   );
 }
 export default ArticleByCategory;

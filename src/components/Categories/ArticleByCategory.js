@@ -44,7 +44,7 @@ function ArticleByCategory() {
   const addlike =()=>{
     setCounter(counter++);
 
-    axios.post ("http://127.0.0.1:8000/add_ArticleLike",{
+    axios.post (`http://127.0.0.1:8000/add_ArticleLike/${id}/`,{
         likes
     }).then(res=>{
       
@@ -73,7 +73,7 @@ function ArticleByCategory() {
                 
                 <span className="d-flex">
                 <div className="likeborder">
-                <Card.Text> <div className="clickonimg" onClick={addlike}><img className="cardlikeimg" src={like}/></div> {e.likes}</Card.Text>
+                <Card.Text> <div className="clickonimg" onClick={addlike}><img className="cardlikeimg" src={like}/></div> <hr/> <div>{e.likes}</div></Card.Text>
                 </div>
                 </span>
                 <br/>

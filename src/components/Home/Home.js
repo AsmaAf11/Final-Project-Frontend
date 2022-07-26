@@ -1,21 +1,14 @@
-import React from 'react'
-
-import Header from "./Header";
-import Footer from "./Footer";
+import React from "react";
 import Cards from "../Categories/Cards";
-
-
+import PArticles from "../Article/PArticles";
 
 function Home() {
   return (
-  <>
-  
-
-  <Cards/>
-
-  </>
-
-  )
+    <>
+      <PArticles />
+      {/* <Cards /> */}
+    </>
+  );
 }
 
-export default Home
+export default Home;

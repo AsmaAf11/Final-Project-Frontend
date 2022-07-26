@@ -9,13 +9,22 @@ div.App{
 /* Header css */
 
 .nav1 {
-  align-items: space-between!important;
 
+  align-items: space-around !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 30%;
-  background-color:rgb(255, 255, 255) !important;
+  background-color:rgb(5, 0, 0) !important;
+  color: rgb(255, 255, 255);
   border-radius: 2%;
 
   width: 100%;
+}
+a{
+  color:white;
+}
+.Links{
+  color: white;
 }
 
 .raw1 {
@@ -25,6 +34,7 @@ div.App{
 /* Footer css */
 
 .main-footer {
+  background-color:black;
   height: 20px;
   margin:50px;
   align-items: space-around;
@@ -37,11 +47,14 @@ div.App{
   width: 10px;
 }
 .shadow{
-  color: rgb(7, 0, 0);
-  background-color:rgb(249, 252, 252) !important;
+  color: rgb(255, 255, 255);
+  background-color:rgb(159, 151, 151) !important;
 
 }
 
+.CDBFooterLink{
+  color: white !important;
+}
 .container1 {
   background-color: rgb(171, 196, 203);
   color: rgb(45, 42, 42);
@@ -157,13 +170,13 @@ div.App{
     }
     
     .card-img-top {
-      border-radius: 7%;
+      
       transform: scale(1);
       transition: all 0.2s ease-in-out;
     }
     
     .card-img-top:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   
     .cardTitleText{

@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 export default function ViewDetails() {
     const { id } = useParams();
     const [data, setData] = useState([]);
+    const [comment,setComment]= useState([])
   
     useEffect(() => {
       axios
@@ -26,7 +27,7 @@ export default function ViewDetails() {
         .get(`http://127.0.0.1:8000/view_comment/${id}/`)
         .then((res) => {
           console.log(res.data);
-          setData(res.data.Comment);
+          setComment(res.data.application);
         })
         .catch((err) => {
           console.log(err);
@@ -60,14 +61,13 @@ export default function ViewDetails() {
 
         );
       })}
-            {data.map((ec) => {
+            {comment.map((ec) => {
         return (
           <Container className="pt-5">
             <Card>
               <Card.Body>
                 <Card.Title className="cardTitleText">Username: {ec.user}</Card.Title>
                 <Card.Text className="cardParagraphText">Comment:<br /> {ec.content}</Card.Text>
-                <Card.Text className="cardParagraphText">Summary:<br />  {ec.summary}</Card.Text>
   
                 <Card.Footer className="text-muted">
                   Commented at: {ec.created_at}

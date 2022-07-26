@@ -1,12 +1,13 @@
 import { Card, Container, Button } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import like from '../Home/like.png'
 
 function ArticleByCategory() {
   const { id } = useParams();
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
   
  
   // const[id, setId] = useState();
@@ -54,6 +55,13 @@ function ArticleByCategory() {
                 <div className="likeborder">
                 <Card.Text  ><img className="cardlikeimg" src={like}/> {e.likes}</Card.Text>
                 </div>
+                <Button
+                  onClick={() => {
+                    navigate(`/ViewDetails/${e.id}`);
+                  }}
+                >
+                  View Articles
+                </Button>
                 <Card.Footer className="text-muted">
                   Publisehd at: {e.created_at} by {e.publisher}
                 </Card.Footer>

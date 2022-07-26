@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Card, Container } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Card, Container, Button } from "react-bootstrap";
+import { useParams, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -11,11 +11,12 @@ export default function ViewDetails() {
   const [comments, setComments] = useState([]);
   const [content, setContent] = useState();
   const [deleteCommentId, setDeleteCommentId] = useState([]);
-
   const accessToken = localStorage.getItem("token");
   const config = {
     headers: { Authorization: `Bearer ${accessToken}` },
   };
+  const [bookMark, setBookMark] = useState();
+  const navigate = useNavigate();
 
   // view article details
   useEffect(() => {
@@ -77,6 +78,19 @@ export default function ViewDetails() {
       });
   };
 
+  // add Book mark
+  const addBookmark = () => {
+    axios
+      .post(`http://127.0.0.1:8000/add_bookmark/`, { bookMark }, config)
+      .then((res) => {
+        console.log(res.data);
+        navigate("/BookMark");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     // view article details card
     <div className="cardsRow" style={{ columnCount: 1 }}>
@@ -89,10 +103,19 @@ export default function ViewDetails() {
                 variant="top"
                 src={e.image}
               />
+
               <Card.Body>
                 <Card.Title className="cardTitleText">
                   Title: {e.title}
                 </Card.Title>
+                <Button
+                  onClick={() => {
+                    setBookMark(id);
+                    addBookmark();
+                  }}
+                >
+                  Add To BookMark
+                </Button>
                 <Card.Text className="cardParagraphText">
                   Content:
                   <br /> {e.content}

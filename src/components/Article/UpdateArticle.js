@@ -75,6 +75,7 @@ export default function UpdateArticle() {
                       setTitle(e.target.value);
                     }}
                     defaultValue={e.title}
+                    
                   ></input>
                   <label htmlFor="title" className="label">
                     Title
@@ -145,6 +146,7 @@ export default function UpdateArticle() {
                       setContent(e.target.value);
                     }}
                     defaultValue={e.content}
+                    
                   />
                   <label htmlFor="content" className="label">
                     content

@@ -4,65 +4,81 @@ import { useNavigate, Link } from "react-router-dom";
 import { Card, Container, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-
 export default function ViewDetails() {
-    const { id } = useParams();
-    const [data, setData] = useState([]);
-    // get
-    const [comments,setComments]= useState([]);
-    // post
-    const [content,setContent]= useState();
+  const [show, setShow] = useState();
+
+  // function to toggle the boolean value
+  function toggleShow() {
+    setShow(!show);
+  }
+
+  var buttonText = show ? "Hide Component" : "Show Component";
+
+
+
+  const { id } = useParams();
+  const [data, setData] = useState([]);
+  // get
+  const [comments, setComments] = useState([]);
+  // post
+  const [content, setContent] = useState();
 
   const navigate = useNavigate();
 
+  // const accessToken = localStorage.getItem("token");
+  const accessToken = localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  };
 
-
-    const accessToken = localStorage.getItem("token");
-    const config = {
-      headers: { Authorization: `Bearer ${accessToken}` }
-    }
-
-
-    // Add comment
-    const addComment = () => {
+  // Add comment
+  const addComment = () => {
+    if (localStorage.getItem("token") === null) {
+      alert("You Need To Login First");
+    } else {
       axios
-        .post(`http://127.0.0.1:8000/add_comment/${id}/`, {content}, config)
+        .post(`http://127.0.0.1:8000/add_comment/${id}/`, { content }, config)
         .then((res) => {
           console.log(res.data);
-          // navigate("/");
+          window.location.reload();
         })
         .catch((error) => {
           console.log(error);
         });
-    };
+    }
+  };
   //view article details
-    useEffect(() => {
-      axios
-        .get(`http://127.0.0.1:8000/article_details/${id}/`)
-        .then((res) => {
-          console.log(res.data);
-          setData(res.data.Article);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }, []);
-    // comments
-    useEffect(() => {
-      axios
-        .get(`http://127.0.0.1:8000/view_comment/${id}/`)
-        .then((res) => {
-          console.log(res.data);
-          setComments(res.data.application);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }, []);
-    
+  useEffect(() => {
+    axios
+      .get(`http://127.0.0.1:8000/article_details/${id}/`)
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data.Article);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
+  // comments
+  useEffect(() => {
+    axios
+      .get(`http://127.0.0.1:8000/view_comment/${id}/`)
+      .then((res) => {
+        console.log(res.data);
+        setComments(res.data.application);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const check_delete = () => {
+    alert('delete')
+    }
+  
   return (
-    <div className="cardsRow" style={{columnCount:1}}>
+    <div className="cardsRow" style={{ columnCount: 1 }}>
       {data.map((e) => {
         return (
           <Container className="pt-5">
@@ -73,9 +89,17 @@ export default function ViewDetails() {
                 src={e.image}
               />
               <Card.Body>
-                <Card.Title className="cardTitleText">Title: {e.title}</Card.Title>
-                <Card.Text className="cardParagraphText">Content:<br /> {e.content}</Card.Text>
-                <Card.Text className="cardParagraphText">Summary:<br />  {e.summary}</Card.Text>
+                <Card.Title className="cardTitleText">
+                  Title: {e.title}
+                </Card.Title>
+                <Card.Text className="cardParagraphText">
+                  Content:
+                  <br /> {e.content}
+                </Card.Text>
+                <Card.Text className="cardParagraphText">
+                  Summary:
+                  <br /> {e.summary}
+                </Card.Text>
                 <Card.Text>Likes: {e.likes}</Card.Text>
                 <Card.Footer className="text-muted">
                   Publisehd at: {e.created_at} by {e.publisher}
@@ -83,33 +107,38 @@ export default function ViewDetails() {
               </Card.Body>
             </Card>
           </Container>
-
-
         );
       })}
-            {comments.map((ec) => {
+      {comments.map((ec) => {
         return (
           <Container className="pt-5">
             <Card>
               <Card.Body>
-                <Card.Title className="cardTitleText">Username: {ec.user}</Card.Title>
-                <Card.Text className="cardParagraphText">Comment:<br /> {ec.content}</Card.Text>
-  
+                <Card.Title
+                  className="cardTitleText"
+                  style={{ textAlign: "left" }}
+                >
+                  @{ec.username}
+                </Card.Title>
+                <Card.Text className="cardParagraphText">
+                  <br /> {ec.content}
+                </Card.Text>
+
                 <Card.Footer className="text-muted">
                   Commented at: {ec.created_at}
+                  <br></br>
+                  
+                  {/* <a onClick={check_delete}>delete</a> */}
+                  {/* {show ? "Hide Component" : "Show Component"} */}
+                  <p onClick={toggleShow}>{buttonText}</p>
                 </Card.Footer>
               </Card.Body>
             </Card>
           </Container>
-
-
-
-
-          
         );
       })}
 
-<section className="add_article ">
+      <section className="add_article ">
         <h1 className="title"> Add Comment</h1>
         <div className="container">
           <div className="add-form row">
@@ -126,7 +155,7 @@ export default function ViewDetails() {
                 Comment:
               </label>
             </div>
-        
+
             <div className="form-field col-lg-12 text-center">
               <input
                 className="submit-btn"
@@ -138,7 +167,6 @@ export default function ViewDetails() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

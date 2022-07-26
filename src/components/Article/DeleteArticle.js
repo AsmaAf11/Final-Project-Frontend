@@ -30,8 +30,10 @@ export default function DeleteArticle() {
     axios
       .delete(`http://127.0.0.1:8000/delete_article/${id}/`, config)
       .then((res) => {
+        alert('deleted')
         setData(res.data.Article);
         navigate("/PArticles");
+        
       })
       .catch((error) => {
         console.log(error);

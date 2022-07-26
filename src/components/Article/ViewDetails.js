@@ -12,8 +12,8 @@ export default function ViewDetails() {
     const [comments,setComments]= useState([]);
     // post
     const [content,setContent]= useState();
-
-  const navigate = useNavigate();
+    const [bookMark,setBookMark]= useState();
+    const navigate = useNavigate();
 
 
 
@@ -60,20 +60,41 @@ export default function ViewDetails() {
         });
     }, []);
     
+    
+    const addBookmark = () => {
+      axios
+        .post(`http://127.0.0.1:8000/add_bookmark/`, {bookMark}, config)
+        .then((res) => {
+          console.log(res.data);
+          navigate("/BookMark");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
 
   return (
     <div className="cardsRow" style={{columnCount:1}}>
       {data.map((e) => {
         return (
           <Container className="pt-5">
+
             <Card style={{ width: "30rem" }}>
               <Card.Img
                 style={{ width: "100%", height: "350px" }}
                 variant="top"
                 src={e.image}
               />
+              
               <Card.Body>
-                <Card.Title className="cardTitleText">Title: {e.title}</Card.Title>
+                
+                <Card.Title className="cardTitleText">Title: {e.title} </Card.Title>
+                
+                <Button onClick={()=>{
+                      setBookMark(id);
+                      addBookmark();
+                    }} >Add To BookMark</Button>
+
                 <Card.Text className="cardParagraphText">Content:<br /> {e.content}</Card.Text>
                 <Card.Text className="cardParagraphText">Summary:<br />  {e.summary}</Card.Text>
                 <Card.Text>Likes: {e.likes}</Card.Text>

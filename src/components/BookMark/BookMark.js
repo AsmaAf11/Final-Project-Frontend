@@ -9,11 +9,11 @@ function BookMark() {
   const accessToken = localStorage.getItem("token");
 
   useEffect(() => {
-    const config = {
-      headers: { Authorization: `Bearer ${accessToken}` },
-    };
+    // const config = {
+    //   headers: { Authorization: `Bearer ${accessToken}` },
+    // };
     axios
-      .get(`http://127.0.0.1:8000/all_articles/`, config)
+      .get(`http://127.0.0.1:8000/all_articles/`)
       .then((res) => {
         console.log(res.data);
         setData(res.data.Articles);

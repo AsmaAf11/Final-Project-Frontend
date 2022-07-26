@@ -1,11 +1,15 @@
 /* add article style */
 
+
+
 .add_article {
   max-width: 800px;
   margin: 50px auto;
   position: relative;
   box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  background-color: #fff;
+  border-radius: 2%;
 }
 .add_article .title {
   text-transform: uppercase;
@@ -68,37 +72,37 @@
   width: 200px;
   cursor: pointer;
   justify-content: center;
+  border-radius: 2%;
 }
-
 /* end add article style */
 
 /* Home article style */
 
-.flip-box{
+
+
+.flip-box {
   transform-style: preserve-3d;
   perspective: 1000px;
   cursor: pointer;
 }
 .flip-box-front,
- .flip-box-back{
-
+.flip-box-back {
   background-size: cover;
   background-position: center;
   border-radius: 8px;
   min-height: 275px;
-  transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   backface-visibility: hidden;
-  
 }
-.flip-box-front{
+.flip-box-front {
   transform: rotateY(0deg);
   transform-style: preserve-3d;
 }
-.flip-box:hover .flip-box-front{
+.flip-box:hover .flip-box-front {
   transform: rotateY(-180deg);
   transform-style: preserve-3d;
 }
-.flip-box-back{
+.flip-box-back {
   position: absolute;
   top: 0;
   left: 0;
@@ -106,7 +110,7 @@
   transform: rotateY(180deg);
   transform-style: preserve-3d;
 }
-.flip-box:hover .flip-box-back{
+.flip-box:hover .flip-box-back {
   transform: rotateY(0deg);
   transform-style: preserve-3d;
 }

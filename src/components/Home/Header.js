@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import BookMark from '../BookMark/BookMark.js'
 import "../../App.css";
 import Map from "./map.png";
+import login from "./log-in.png";
+
 
 function Header() {
   return (
@@ -12,21 +14,21 @@ function Header() {
       <Navbar bg="none" expand="lg">
         <Container className="nav1">
           <Navbar.Brand href="#home">
-            <img alt="logo" src={Map} width="30px" />
+            <img className="logo" alt="logo" src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-notes-icon-png-image_4151220.jpg"  width="30px" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/categories">Catagories </Nav.Link>
-              <Nav.Link href="/BookMark">BookMark </Nav.Link>
+              <Nav.Link href="/"className="Links">Home</Nav.Link>
+              <Nav.Link href="/categories" className="Links">Catagories </Nav.Link>
+              <Nav.Link href="/BookMark"className="Links">BookMark </Nav.Link>
               <Nav.Link href="/signup">
                 {" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
-                  fill="currentColor"
+                  fill="white"
                   className="bi bi-person-plus-fill"
                   viewBox="0 0 16 16"
                 >
@@ -42,7 +44,7 @@ function Header() {
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
-                  fill="currentColor"
+                  fill="white"
                   className="bi bi-box-arrow-in-right"
                   viewBox="0 0 16 16"
                 >

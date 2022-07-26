@@ -23,7 +23,7 @@ export default function ViewDetails() {
 
 
   return (
-    <div className="cardsRow">
+    <div className="cardsRow" style={{columnCount:1}}>
       {data.map((e) => {
         return (
           <Container className="pt-5">

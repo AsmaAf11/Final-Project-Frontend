@@ -9,7 +9,11 @@ import Facebook from './facebook.png'
 
 function Footer() {
   return (
+    <>
+    
     <CDBFooter className="shadow">
+
+          <hr/>
       <CDBBox display="flex" flex="column" className="mx-auto py-5" style={{ width: '90%' }}>
         <CDBBox display="flex" justifyContent="between" className="flex-wrap">
           <CDBBox>
@@ -38,8 +42,8 @@ function Footer() {
             </p>
             <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0' }}>
               <CDBFooterLink href="/">Home</CDBFooterLink>
-              <CDBFooterLink href="/">About Us</CDBFooterLink>
-              <CDBFooterLink href="/">Catagories</CDBFooterLink>
+              <CDBFooterLink  href="/">About Us</CDBFooterLink>
+              <CDBFooterLink  href="/">Catagories</CDBFooterLink>
               <CDBFooterLink href="/">Contact</CDBFooterLink>
             </CDBBox>
           </CDBBox>
@@ -66,6 +70,7 @@ function Footer() {
         <small className="text-center mt-5">&copy; Devwares, 2020. All rights reserved.</small>
       </CDBBox>
     </CDBFooter>
+    </>
   )
 }
 

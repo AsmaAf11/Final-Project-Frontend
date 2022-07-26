@@ -19,6 +19,7 @@ import UpdateArticle from "./components/Article/UpdateArticle";
 import DeleteArticle from "./components/Article/DeleteArticle";
 
 
+
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
         <Router>
           <Routes>
             <Route>
+            
               <Route path="/AddArticle" element={<AddArticle />}></Route>
               <Route path="/Header" element={<Header />}></Route>
               <Route path="/Footer" element={<Footer />}></Route>

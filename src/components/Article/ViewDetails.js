@@ -8,7 +8,34 @@ import { useParams } from "react-router-dom";
 export default function ViewDetails() {
     const { id } = useParams();
     const [data, setData] = useState([]);
-  
+    // get
+    const [comments,setComments]= useState([]);
+    // post
+    const [content,setContent]= useState();
+
+  const navigate = useNavigate();
+
+
+
+    const accessToken = localStorage.getItem("token");
+    const config = {
+      headers: { Authorization: `Bearer ${accessToken}` }
+    }
+
+
+    // Add comment
+    const addComment = () => {
+      axios
+        .post(`http://127.0.0.1:8000/add_comment/${id}/`, {content}, config)
+        .then((res) => {
+          console.log(res.data);
+          // navigate("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+  //view article details
     useEffect(() => {
       axios
         .get(`http://127.0.0.1:8000/article_details/${id}/`)
@@ -20,7 +47,19 @@ export default function ViewDetails() {
           console.log(err);
         });
     }, []);
-
+    // comments
+    useEffect(() => {
+      axios
+        .get(`http://127.0.0.1:8000/view_comment/${id}/`)
+        .then((res) => {
+          console.log(res.data);
+          setComments(res.data.application);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
+    
 
   return (
     <div className="cardsRow" style={{columnCount:1}}>
@@ -44,8 +83,62 @@ export default function ViewDetails() {
               </Card.Body>
             </Card>
           </Container>
+
+
         );
       })}
+            {comments.map((ec) => {
+        return (
+          <Container className="pt-5">
+            <Card>
+              <Card.Body>
+                <Card.Title className="cardTitleText">Username: {ec.user}</Card.Title>
+                <Card.Text className="cardParagraphText">Comment:<br /> {ec.content}</Card.Text>
+  
+                <Card.Footer className="text-muted">
+                  Commented at: {ec.created_at}
+                </Card.Footer>
+              </Card.Body>
+            </Card>
+          </Container>
+
+
+
+
+          
+        );
+      })}
+
+<section className="add_article ">
+        <h1 className="title"> Add Comment</h1>
+        <div className="container">
+          <div className="add-form row">
+            <div className="form-field col-lg-6">
+              <input
+                id="content"
+                className="input-text"
+                type={"text"}
+                onChange={(e) => {
+                  setContent(e.target.value);
+                }}
+              ></input>
+              <label htmlFor="content" className="label">
+                Comment:
+              </label>
+            </div>
+        
+            <div className="form-field col-lg-12 text-center">
+              <input
+                className="submit-btn"
+                type={"submit"}
+                value="add cpmment"
+                onClick={addComment}
+              ></input>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

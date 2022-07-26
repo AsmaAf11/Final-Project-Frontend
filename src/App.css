@@ -1,8 +1,6 @@
 /* Background css */
 div.App {
-  background-color: whitesmoke;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #f7f4ef;
 }
 
 /* Header css */
@@ -12,7 +10,7 @@ div.App {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 30%;
-  background-color: rgb(5, 0, 0) !important;
+  background-color: #b7cadb !important;
   color: rgb(255, 255, 255);
   border-radius: 2%;
 
@@ -46,7 +44,7 @@ a {
 }
 .shadow {
   color: rgb(255, 255, 255);
-  background-color: rgb(159, 151, 151) !important;
+  background-color: #b7cadb !important;
 }
 
 .CDBFooterLink {
@@ -176,6 +174,32 @@ a {
 }
 
 .cardTitleText {
+  color: white;
+  text-transform: capitalize;
+  text-align: center;
+}
+.card {
+  background-color: #f3e9dd !important;
+}
+
+.card:hover {
+  transition: all 0.2s linear;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.card-img-top {
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1);
+}
+
+.cardTitleText {
   color: black;
   text-transform: capitalize;
   text-align: center;
@@ -187,4 +211,29 @@ a {
   display: block;
 
   text-align: justify;
+
+  display: block;
+  color: white;
+
+  text-align: justify;
+}
+.cardlikeimg {
+  padding-right: 5px;
+  height: 25px;
+  width: 25px;
+}
+.likeborder {
+  border-collapse: separate;
+  border: solid black 1px;
+  border-radius: 10%;
+  color: black;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  background-color: white;
+}
+
+.clickonimg {
+  cursor: pointer;
 }

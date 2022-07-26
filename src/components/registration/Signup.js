@@ -37,7 +37,7 @@ function Signup() {
     // </div>
     <>
 
-<section className="background-radial-gradient overflow-hidden">
+<section className="background-radial-gradient overflow-hidden form-style ">
   
 
   <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
@@ -61,31 +61,21 @@ function Signup() {
 
         <div className="card bg-glass">
           <div className="card-body px-4 py-5 px-md-5">
-            
-                <div className="col-md-6 mb-4">
-                  <div className="form-outline">
-                    <input type="text" id="form3Example2" className="form-control" onChange={(e)=>{setUsername(e.target.value)}} />
-                    <label className="form-label">Username</label>
-                  </div>
-                </div>
-              </div>
-
               
-              <div className="form-outline mb-4">
-                <input type="email" id="form3Example3" className="form-control"  onChange={(e)=>{setEmail(e.target.value)}}/>
+                <input type="text" className="form-control" onChange={(e)=>{setUsername(e.target.value)}} />
+                <label className="form-label">Username</label>
+                              
+                <input type="email"  className="form-control"  onChange={(e)=>{setEmail(e.target.value)}}/>
                 <label className="form-label" >Email address</label>
-              </div>
-
               
-              <div className="form-outline mb-4">
-                <input type="password" id="form3Example4" className="form-control" onChange={(e)=>{setPassword(e.target.value)}}/>
+                <input type="password"  className="form-control" onChange={(e)=>{setPassword(e.target.value)}}/>
                 <label className="form-label">Password</label>
+             
               </div>
-
+              <div className="text-center">
               <button type="submit" className="btn btn-primary btn-block mb-4" onClick={postData}>
                 Sign up
-              </button>
-            
+              </button></div>
           </div>
         </div>
       </div>

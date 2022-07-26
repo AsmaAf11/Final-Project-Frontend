@@ -6,6 +6,7 @@ import Earth from './earth.png'
 import { CDBFooter } from 'cdbreact';
 import { CDBFooterLink, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
 import Facebook from './facebook.png'
+import {Container} from "react-bootstrap"
 
 function Footer() {
   return (

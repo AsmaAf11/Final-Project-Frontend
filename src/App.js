@@ -13,6 +13,7 @@ import Top5 from "./components/Top5";
 import PArticles from "./components/Article/PArticles";
 import Logout from "./components/registration/Logout";
 import ViewDetails from "./components/Article/ViewDetails";
+import BookMark from'./components/BookMark/BookMark.js'
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/Footer" element={<Footer />}></Route>
               <Route path="/" element={<Home />}></Route>
               <Route path="/top" element={<Top5 />}></Route>
+              <Route path="/BookMark" element={<BookMark />}></Route>
 
               <Route path="/Cards" element={<Cards />}></Route>
               <Route

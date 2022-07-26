@@ -13,13 +13,14 @@ import Top5 from "./components/Top5";
 import PArticles from "./components/Article/PArticles";
 import Logout from "./components/registration/Logout";
 import ViewDetails from "./components/Article/ViewDetails";
+import HomeArticles from "./components/Article/HomeArticles";
 import BookMark from'./components/BookMark/BookMark.js'
 
 
 function App() {
   return (
     <div className="App">
-      <Container>
+     
         <Header />
         <Router>
           <Routes>
@@ -50,11 +51,13 @@ function App() {
 
               <Route path="/PArticles" element={<PArticles />}></Route>
               <Route path="/ViewDetails/:id" element={<ViewDetails />}></Route>
+              <Route path="/HomeArticles" element={<HomeArticles />}></Route>
 
+              
             </Route>
           </Routes>
         </Router>
-      </Container>
+    
       <Footer />
     </div>
   );

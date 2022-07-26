@@ -1,9 +1,21 @@
+
+/* Background css */
+div.App{
+  background-color: rgb(243, 241, 244);
+}
+
 /* Header css */
 
 .nav1 {
-  align-items: space-around !important;
-  margin-left: 30%;
+  align-items: space-between!important;
+
+  padding-left: 30%;
+  background-color:white !important;
+  border-radius: 2%;
+
+  width: 100%;
 }
+
 .raw1 {
   padding: 100px !important;
   margin: 100px !important;
@@ -11,7 +23,7 @@
 /* Footer css */
 
 .main-footer {
-  background-image: "https://www.moh.gov.ps/portal/insurance-footer-background/" !important;
+  
   align-items: space-around;
 }
 .list-unstyled {
@@ -20,6 +32,11 @@
 .fooerimg {
   height: 150px;
   width: 150px;
+}
+.shadow{
+  color: rgb(7, 0, 0);
+  background-color:rgb(249, 252, 252) !important;
+
 }
 
 .container1 {
@@ -112,10 +129,13 @@
         background-color: hsla(0, 0%, 100%, 0.9) !important;
         backdrop-filter: saturate(200%) blur(25px);
       }
-
+/* Cards css */
 
       .cardsRow{
         display: flex;
+        margin-left: 150px;
+        margin-right: 30px;
+
         flex-direction: row;
         margin-bottom: 50px;
     
@@ -132,6 +152,7 @@
     }
     
     .card-img-top {
+      border-radius: 7%;
       transform: scale(1);
       transition: all 0.2s ease-in-out;
     }
@@ -147,6 +168,7 @@
     }
 
     .cardParagraphText{
+      display: block;
 
       text-align: justify;
     }

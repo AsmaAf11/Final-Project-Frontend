@@ -1,37 +1,49 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { Card, Container, Button } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function ViewDetails() {
-  const [show, setShow] = useState();
-
-  // function to toggle the boolean value
-  function toggleShow() {
-    setShow(!show);
-  }
-
-  var buttonText = show ? "Hide Component" : "Show Component";
-
-
-
   const { id } = useParams();
   const [data, setData] = useState([]);
-  // get
   const [comments, setComments] = useState([]);
-  // post
   const [content, setContent] = useState();
+  const [deleteCommentId, setDeleteCommentId] = useState([]);
 
-  const navigate = useNavigate();
-
-  // const accessToken = localStorage.getItem("token");
   const accessToken = localStorage.getItem("token");
   const config = {
     headers: { Authorization: `Bearer ${accessToken}` },
   };
 
-  // Add comment
+  // view article details
+  useEffect(() => {
+    axios
+      .get(`http://127.0.0.1:8000/article_details/${id}/`)
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data.Article);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  // view comments
+  useEffect(() => {
+    axios
+      .get(`http://127.0.0.1:8000/view_comment/${id}/`)
+      .then((res) => {
+        console.log(res.data);
+        setComments(res.data.application);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  // add comment
   const addComment = () => {
     if (localStorage.getItem("token") === null) {
       alert("You Need To Login First");
@@ -47,37 +59,26 @@ export default function ViewDetails() {
         });
     }
   };
-  //view article details
-  useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/article_details/${id}/`)
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data.Article);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
 
-  // comments
-  useEffect(() => {
+  // delete comment
+  const deleteComment = () => {
     axios
-      .get(`http://127.0.0.1:8000/view_comment/${id}/`)
+      .delete(
+        `http://127.0.0.1:8000/delete_comment/${deleteCommentId}/`,
+        config
+      )
       .then((res) => {
-        console.log(res.data);
-        setComments(res.data.application);
+        setData(res.data.Comment);
+        alert("deleted");
+        window.location.reload();
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log(error);
       });
-  }, []);
+  };
 
-  const check_delete = () => {
-    alert('delete')
-    }
-  
   return (
+    // view article details card
     <div className="cardsRow" style={{ columnCount: 1 }}>
       {data.map((e) => {
         return (
@@ -109,11 +110,27 @@ export default function ViewDetails() {
           </Container>
         );
       })}
+
+      {/* view comments delete in the same card*/}
       {comments.map((ec) => {
         return (
           <Container className="pt-5">
             <Card>
               <Card.Body>
+                <Card.Text>
+                  <span
+                    className="bi bi-x-square"
+                    style={{
+                      padding: `10px`,
+                      color: "red",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => {
+                      setDeleteCommentId(ec.id);
+                      deleteComment();
+                    }}
+                  ></span>
+                </Card.Text>
                 <Card.Title
                   className="cardTitleText"
                   style={{ textAlign: "left" }}
@@ -126,11 +143,6 @@ export default function ViewDetails() {
 
                 <Card.Footer className="text-muted">
                   Commented at: {ec.created_at}
-                  <br></br>
-                  
-                  {/* <a onClick={check_delete}>delete</a> */}
-                  {/* {show ? "Hide Component" : "Show Component"} */}
-                  <p onClick={toggleShow}>{buttonText}</p>
                 </Card.Footer>
               </Card.Body>
             </Card>
@@ -138,6 +150,7 @@ export default function ViewDetails() {
         );
       })}
 
+      {/* add comment */}
       <section className="add_article ">
         <h1 className="title"> Add Comment</h1>
         <div className="container">

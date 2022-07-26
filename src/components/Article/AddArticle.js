@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Article/css/Article.css";
 import { useParams } from "react-router-dom";
 
-
 export default function AddArticle() {
   document.title = "Add Article";
   const navigate = useNavigate();
@@ -18,19 +17,23 @@ export default function AddArticle() {
 
   const accessToken = localStorage.getItem("token");
   const config = {
-    headers: { Authorization: `Bearer ${accessToken}` }
-  }
+    headers: { Authorization: `Bearer ${accessToken}` },
+  };
 
   const addArticle = () => {
     axios
-      .post(`http://127.0.0.1:8000/add_article/`,  {
-        title,
-        image,
-        reference,
-        category,
-        summary,
-        content,
-      }, config)
+      .post(
+        `http://127.0.0.1:8000/add_article/`,
+        {
+          title,
+          image,
+          reference,
+          category,
+          summary,
+          content,
+        },
+        config
+      )
       .then((res) => {
         console.log(res);
         navigate("/");
@@ -85,7 +88,33 @@ export default function AddArticle() {
                 reference
               </label>
             </div>
+
             <div className="form-field col-lg-6">
+              <select
+                className="input-text"
+                id="category"
+                defaultValue="Category"
+                onChange={(e) => {
+                  setCategory(e.target.value);
+                }}
+              >
+                <option disabled value="Category">
+                  Select
+                </option>
+                <option value="7">Food Drink</option>
+                <option value="6">Entertainment</option>
+                <option value="5">Sport</option>
+                <option value="4">Economy</option>
+                <option value="3">Health</option>
+                <option value="2">Business</option>
+                <option value="1">Technology</option>
+              </select>
+              <label htmlFor="category" className="label">
+                category
+              </label>
+            </div>
+
+            {/* <div className="form-field col-lg-6">
               <input
                 id="category"
                 className="input-text"
@@ -93,11 +122,12 @@ export default function AddArticle() {
                 onChange={(e) => {
                   setCategory(e.target.value);
                 }}
-              ></input>
-              <label htmlFor="category" className="label">
+              ></input> */}
+            {/* <label htmlFor="category" className="label">
                 category
-              </label>
-            </div>
+              </label> */}
+            {/* </div> */}
+
             <div className="form-field col-lg-12">
               <textarea
                 id="summary"
@@ -128,7 +158,7 @@ export default function AddArticle() {
               <input
                 className="submit-btn"
                 type={"submit"}
-                value="submit"
+                value="Add"
                 onClick={addArticle}
               ></input>
             </div>

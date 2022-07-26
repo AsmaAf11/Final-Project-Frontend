@@ -4,7 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 import { Card, Container, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-
 export default function UpdateArticle() {
   document.title = "Update Article";
   const navigate = useNavigate();
@@ -75,7 +74,6 @@ export default function UpdateArticle() {
                       setTitle(e.target.value);
                     }}
                     defaultValue={e.title}
-                    
                   ></input>
                   <label htmlFor="title" className="label">
                     Title
@@ -110,15 +108,25 @@ export default function UpdateArticle() {
                   </label>
                 </div>
                 <div className="form-field col-lg-6">
-                  <input
-                    id="category"
+                  <select
                     className="input-text"
-                    type={"text"}
+                    id="category"
+                    defaultValue={e.category}
                     onChange={(e) => {
                       setCategory(e.target.value);
                     }}
-                    defaultValue={e.category}
-                  ></input>
+                  >
+                    <option disabled value="Category">
+                      Select
+                    </option>
+                    <option value="7">Food Drink</option>
+                    <option value="6">Entertainment</option>
+                    <option value="5">Sport</option>
+                    <option value="4">Economy</option>
+                    <option value="3">Health</option>
+                    <option value="2">Business</option>
+                    <option value="1">Technology</option>
+                  </select>
                   <label htmlFor="category" className="label">
                     category
                   </label>
@@ -146,7 +154,6 @@ export default function UpdateArticle() {
                       setContent(e.target.value);
                     }}
                     defaultValue={e.content}
-                    
                   />
                   <label htmlFor="content" className="label">
                     content
@@ -165,7 +172,6 @@ export default function UpdateArticle() {
           </section>
         );
       })}
-      
     </>
   );
 }

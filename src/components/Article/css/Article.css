@@ -1,7 +1,5 @@
 /* add article style */
 
-
-
 .add_article {
   max-width: 800px;
   margin: 50px auto;
@@ -52,7 +50,7 @@
   left: 20px;
   bottom: 11px;
   font-size: 18px;
-  line-height: 26px;
+  line-height: 80px;
   font-weight: 400;
   color: #5543ca;
   cursor: text;
@@ -77,8 +75,6 @@
 /* end add article style */
 
 /* Home article style */
-
-
 
 .flip-box {
   transform-style: preserve-3d;

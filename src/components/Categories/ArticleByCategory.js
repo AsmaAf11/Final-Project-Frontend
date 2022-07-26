@@ -1,5 +1,4 @@
 import { Card, Container, Button } from "react-bootstrap";
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -7,6 +6,8 @@ import axios from "axios";
 function ArticleByCategory() {
   const { id } = useParams();
   const [data, setData] = useState([]);
+  
+ 
   // const[id, setId] = useState();
 
   useEffect(() => {
@@ -23,7 +24,18 @@ function ArticleByCategory() {
       });
   }, []);
 
+  const SearchHandle = async (event)=>{
+    let key = event.target.value;
+    let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
+    result = await result.json()
+    if(result){
+      setData(result)
+    }
+  }
+
   return (
+    <>
+    <input type="" className="search-box" placeholder="Search" onChange={SearchHandle}/>
     <div className="cardsRow">
       {data.map((e) => {
         return (
@@ -46,7 +58,7 @@ function ArticleByCategory() {
           </Container>
         );
       })}
-    </div>
+    </div></>
   );
 }
 export default ArticleByCategory;

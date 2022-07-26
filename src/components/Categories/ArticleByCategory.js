@@ -35,6 +35,25 @@ function ArticleByCategory() {
     }
   }
 
+
+
+
+  let [counter, setCounter] = useState(0);
+  const [likes,SetLike]=useState(0)
+
+  const addlike =()=>{
+    setCounter(counter++);
+
+    axios.post ("http://127.0.0.1:8000/add_ArticleLike",{
+        likes
+    }).then(res=>{
+      
+      console.log(res.data);
+      SetLike(res.data.Articles);
+
+        })
+        .catch(err=>{console.log(err)})
+}
   return (
     <>
     <input type="" className="search-box" placeholder="Search" onChange={SearchHandle}/>
@@ -52,9 +71,12 @@ function ArticleByCategory() {
                 <Card.Title className="cardTitleText">{e.title}</Card.Title>
                 <Card.Text className="cardParagraphText">{e.summary}</Card.Text>
                 
+                <span className="d-flex">
                 <div className="likeborder">
-                <Card.Text  ><img className="cardlikeimg" src={like}/> {e.likes}</Card.Text>
+                <Card.Text> <div className="clickonimg" onClick={addlike}><img className="cardlikeimg" src={like}/></div> {e.likes}</Card.Text>
                 </div>
+                </span>
+                <br/>
                 <Button
                   onClick={() => {
                     navigate(`/ViewDetails/${e.id}`);

@@ -6,28 +6,41 @@ import { useParams } from "react-router-dom";
 
 
 export default function ViewDetails() {
-  const [data, setData] = useState([]);
-  const { id } = useParams();
-
-  const navigate = useNavigate();
-  const accessToken = localStorage.getItem("token");
+    const { id } = useParams();
+    const [data, setData] = useState([]);
+  
+    useEffect(() => {
+      axios
+        .get(`http://127.0.0.1:8000/article_details/${id}/`)
+        .then((res) => {
+          console.log(res.data);
+          setData(res.data.Article);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
 
 
   return (
-    <div>
+    <div className="cardsRow">
       {data.map((e) => {
         return (
           <Container className="pt-5">
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "30rem" }}>
               <Card.Img
                 style={{ width: "100%", height: "350px" }}
                 variant="top"
                 src={e.image}
               />
               <Card.Body>
-                <Card.Title>{e.title}</Card.Title>
-                {/* <Link to="/articlesCategories" > */}
-                {/* </Link */}
+                <Card.Title className="cardTitleText">Title: {e.title}</Card.Title>
+                <Card.Text className="cardParagraphText">Content:<br /> {e.content}</Card.Text>
+                <Card.Text className="cardParagraphText">Summary:<br />  {e.summary}</Card.Text>
+                <Card.Text>Likes: {e.likes}</Card.Text>
+                <Card.Footer className="text-muted">
+                  Publisehd at: {e.created_at} by {e.publisher}
+                </Card.Footer>
               </Card.Body>
             </Card>
           </Container>

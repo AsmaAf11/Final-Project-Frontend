@@ -36,7 +36,8 @@ function PArticles() {
   // }, []);
 
   return (
-    <div>
+    <div> 
+      <h3>My Articles</h3>
       {data.map((e) => {
         return (
           <Container className="pt-5">

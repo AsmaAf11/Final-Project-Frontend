@@ -157,13 +157,13 @@ div.App{
     }
     
     .card-img-top {
-      border-radius: 7%;
+      
       transform: scale(1);
       transition: all 0.2s ease-in-out;
     }
     
     .card-img-top:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   
     .cardTitleText{

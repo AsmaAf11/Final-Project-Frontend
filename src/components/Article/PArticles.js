@@ -6,18 +6,34 @@ import { Card, Container, Button } from "react-bootstrap";
 function PArticles() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+  const accessToken = localStorage.getItem("token");
 
   useEffect(() => {
+    const config = {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    };
     axios
-      .get(`http://127.0.0.1:8000/posted_articles_per_publisher/`)
+      .get(`http://127.0.0.1:8000/posted_articles_per_publisher/`, config)
       .then((res) => {
-        console.log(res.data.Articles);
-        // setData(res.data.Articles);
+        console.log(res.data);
+        setData(res.data.Articles);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://127.0.0.1:8000/posted_articles_per_publisher/`)
+  //     .then((res) => {
+  //       console.log(res.data.Articles);
+  //       // setData(res.data.Articles);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   return (
     <div>
@@ -35,11 +51,10 @@ function PArticles() {
                 {/* <Link to="/articlesCategories" > */}
                 <Button
                   onClick={() => {
-                    navigate(`/articlesCategories/${e.id}`);
+                    navigate(`/ViewDetails/${e.id}`);
                   }}
                 >
-                  {" "}
-                  View Articles{" "}
+                  View Articles
                 </Button>
                 {/* </Link */}
               </Card.Body>

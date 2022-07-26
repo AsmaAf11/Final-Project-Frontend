@@ -1,7 +1,7 @@
 
 /* Background css */
 div.App{
-  background-color:aliceblue;
+  background-color:#f7f4ef;
 
 }
 
@@ -13,7 +13,7 @@ div.App{
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 30%;
-  background-color:rgb(159, 151, 151) !important;
+  background-color:#B7CADB !important;
   color: rgb(255, 255, 255);
   border-radius: 2%;
 
@@ -47,7 +47,7 @@ a{
 }
 .shadow{
   color: rgb(255, 255, 255);
-  background-color:rgb(159, 151, 151) !important;
+  background-color:#B7CADB !important;
 
 }
 
@@ -185,7 +185,7 @@ a{
       text-align: center;
     }
 .card{
-  background-color:rgb(159, 151, 151) !important;
+  background-color:#F3E9DD!important;
 }
     .cardParagraphText{
 

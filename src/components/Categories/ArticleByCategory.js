@@ -7,6 +7,7 @@ import like from '../Home/like.png'
 function ArticleByCategory() {
   const { id } = useParams();
   const [data, setData] = useState([]);
+
   const navigate = useNavigate();
   const accessToken = localStorage.getItem("token");
   const config = {
@@ -23,20 +24,31 @@ function ArticleByCategory() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [id]);
 
-  const SearchHandle = async (event)=>{
+  // const SearchHandle = async (event) => {
+  //   let key = event.target.value;
+  //   let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
+  //   result = await result.json();
+  //   if (result) {
+  //     setData(result);
+  //   }
+  // };
+  const Search = async (event) => {
     let key = event.target.value;
-    let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
-    result = await result.json()
-    if(result){
-      setData(result)
-    }
-  }
+    axios
+      .get(`http://127.0.0.1:8000/search1/?title=${key}`)
+      .then((response) => {
+        console.log(response.data.Article);
+         setData(response.data.Article);
 
 
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
 
-
+  };
   let [counter, setCounter] = useState(0);
   const [likes,SetLike]=useState(0)
 
@@ -55,22 +67,28 @@ function ArticleByCategory() {
 }
   return (
     <>
-    <input type="" className="search-box" placeholder="Search" onChange={SearchHandle}/>
-    <div className="cardsRow">
-      {data.map((e) => {
-        return (
-          <Container className="pt-5">
-            <Card style={{ width: "30rem" }}>
-              <Card.Img
-                style={{ width: "100%", height: "350px" }}
-                variant="top"
-                src={e.image}
-              />
-              <Card.Body>
-                <Card.Title className="cardTitleText">{e.title}</Card.Title>
-                <Card.Text className="cardParagraphText">{e.summary}</Card.Text>
-                
-                <span className="d-flex">
+      <input
+        type=""
+        className="search-box"
+        placeholder="Search"
+        onChange={Search}
+      />
+      <div className="cardsRow">
+        {data?.map((e) => {
+          return (
+            <Container className="pt-5">
+              <Card style={{ width: "30rem" }} key={e.id}>
+                <Card.Img
+                  style={{ width: "100%", height: "350px" }}
+                  variant="top"
+                  src={e.image}
+                />
+                <Card.Body>
+                  <Card.Title className="cardTitleText">{e.title}</Card.Title>
+                  <Card.Text className="cardParagraphText">
+                    {e.summary}
+                  </Card.Text>
+                  <span className="d-flex">
                 <div className="likeborder">
                 <Card.Text> <div className="clickonimg" onClick={addlike}><img className="cardlikeimg" src={like}/></div> <hr/> <div>{e.likes}</div></Card.Text>
                 </div>
@@ -83,15 +101,17 @@ function ArticleByCategory() {
                 >
                   View Articles
                 </Button>
-                <Card.Footer className="text-muted">
-                  Publisehd at: {e.created_at} by {e.publisher}
-                </Card.Footer>
-              </Card.Body>
-            </Card>
-          </Container>
-        );
-      })}
-    </div></>
-  );
+                  <Card.Footer className="text-muted">
+                    Publisehd at: {e.created_at} by {e.publisher}
+                  </Card.Footer>
+                </Card.Body>
+              </Card>
+            </Container>
+          );
+        })}
+      </div>
+    </>
+  
+  )
 }
 export default ArticleByCategory;

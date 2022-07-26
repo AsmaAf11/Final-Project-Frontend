@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
       <PArticles />
-      {/* <Cards /> */}
+      <Cards />
     </>
   );
 }

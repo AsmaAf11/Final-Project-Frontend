@@ -15,26 +15,25 @@ export default function AddArticle() {
   const [category, setCategory] = useState();
   const [summary, setSummary] = useState();
   const [content, setContent] = useState();
-  const [publisher, setPublisher] = useState();
 
-  const { id } = useParams();
+  const accessToken = localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${accessToken}` }
+  }
 
-  
   const addArticle = () => {
-    setPublisher(id)
     axios
-      .post(`http://127.0.0.1:8000/add_article/`, {
+      .post(`http://127.0.0.1:8000/add_article/`,  {
         title,
         image,
         reference,
         category,
         summary,
         content,
-        publisher
-      })
+      }, config)
       .then((res) => {
         console.log(res);
-        navigate("/Home");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);

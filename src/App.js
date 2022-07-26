@@ -12,6 +12,8 @@ import ArticleByCategory from "./components/Categories/ArticleByCategory";
 import Top5 from "./components/Top5";
 import PArticles from "./components/Article/PArticles";
 import Logout from "./components/registration/Logout";
+import ViewDetails from "./components/Article/ViewDetails";
+
 
 function App() {
   return (
@@ -42,10 +44,10 @@ function App() {
 
               <Route path="/login" element={<Login />}></Route>
               <Route path="/logout" element={<Logout />}></Route>
-
-
               <Route path="/signup" element={<Signup />}></Route>
+
               <Route path="/PArticles" element={<PArticles />}></Route>
+              <Route path="/ViewDetails/:id" element={<ViewDetails />}></Route>
 
             </Route>
           </Routes>

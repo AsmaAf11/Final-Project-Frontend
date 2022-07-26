@@ -11,7 +11,7 @@ export default function ViewDetails() {
     // get
     const [comments,setComments]= useState([]);
     // post
-    const [comment,setComment]= useState([]);
+    const [content,setContent]= useState();
 
   const navigate = useNavigate();
 
@@ -26,12 +26,10 @@ export default function ViewDetails() {
     // Add comment
     const addComment = () => {
       axios
-        .post(`http://127.0.0.1:8000/add_article/`,  {
-          comment
-        }, config)
+        .post(`http://127.0.0.1:8000/add_comment/${id}/`, {content}, config)
         .then((res) => {
-          console.log(res);
-          navigate("/ViewDetails");
+          console.log(res.data);
+          // navigate("/");
         })
         .catch((error) => {
           console.log(error);
@@ -117,14 +115,14 @@ export default function ViewDetails() {
           <div className="add-form row">
             <div className="form-field col-lg-6">
               <input
-                id="title"
+                id="content"
                 className="input-text"
                 type={"text"}
                 onChange={(e) => {
-                  setComment(e.target.value);
+                  setContent(e.target.value);
                 }}
               ></input>
-              <label htmlFor="title" className="label">
+              <label htmlFor="content" className="label">
                 Comment:
               </label>
             </div>
@@ -133,7 +131,7 @@ export default function ViewDetails() {
               <input
                 className="submit-btn"
                 type={"submit"}
-                value="submit"
+                value="add cpmment"
                 onClick={addComment}
               ></input>
             </div>

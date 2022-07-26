@@ -8,13 +8,12 @@ function ArticleByCategory() {
   const { id } = useParams();
   const [data, setData] = useState([]);
   const navigate = useNavigate();
-  
- 
-  // const[id, setId] = useState();
+  const accessToken = localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${accessToken}` }
+  }
 
   useEffect(() => {
-    //  setId1(localStorage.getItem("id"));
-    // console.log(localStorage.getItem("id"));
     axios
       .get(`http://127.0.0.1:8000/posted_articles_per_category/${id}/`)
       .then((res) => {

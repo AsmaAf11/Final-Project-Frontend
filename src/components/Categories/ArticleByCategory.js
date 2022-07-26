@@ -49,7 +49,10 @@ function ArticleByCategory() {
               <Card.Body>
                 <Card.Title className="cardTitleText">{e.title}</Card.Title>
                 <Card.Text className="cardParagraphText">{e.summary}</Card.Text>
-                <Card.Text>Likes: {e.likes}</Card.Text>
+                
+                <div className="likeborder">
+                <Card.Text  ><img className="cardlikeimg" src={like}/> {e.likes}</Card.Text>
+                </div>
                 <Card.Footer className="text-muted">
                   Publisehd at: {e.created_at} by {e.publisher}
                 </Card.Footer>

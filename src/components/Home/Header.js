@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import { Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import BookMark from '../BookMark/BookMark.js'
 import "../../App.css";
 import Map from "./map.png";
 
@@ -18,6 +19,7 @@ function Header() {
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/categories">Catagories </Nav.Link>
+              <Nav.Link href="/BookMark">BookMark </Nav.Link>
               <Nav.Link href="/signup">
                 {" "}
                 <svg

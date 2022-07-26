@@ -13,6 +13,7 @@ import Top5 from "./components/Top5";
 import PArticles from "./components/Article/PArticles";
 import Logout from "./components/registration/Logout";
 import ViewDetails from "./components/Article/ViewDetails";
+import HomeArticles from "./components/Article/HomeArticles";
 
 
 function App() {
@@ -48,7 +49,9 @@ function App() {
 
               <Route path="/PArticles" element={<PArticles />}></Route>
               <Route path="/ViewDetails/:id" element={<ViewDetails />}></Route>
+              <Route path="/HomeArticles" element={<HomeArticles />}></Route>
 
+              
             </Route>
           </Routes>
         </Router>

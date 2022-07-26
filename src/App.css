@@ -23,7 +23,7 @@ div.App{
 /* Footer css */
 
 .main-footer {
-  
+  margin:50px;
   align-items: space-around;
 }
 .list-unstyled {

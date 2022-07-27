@@ -17,6 +17,7 @@ import HomeArticles from "./components/Article/HomeArticles";
 import BookMark from'./components/BookMark/BookMark.js'
 import UpdateArticle from "./components/Article/UpdateArticle";
 import DeleteArticle from "./components/Article/DeleteArticle";
+import SectionText from "./components/Home/SectionText";
 
 
 
@@ -58,6 +59,8 @@ function App() {
               <Route path="/UpdateArticle/:id" element={<UpdateArticle />}></Route>
               <Route path="/DeleteArticle/:id" element={<DeleteArticle />}></Route>
               <Route path="/HomeArticles" element={<HomeArticles />}></Route>
+
+              <Route path="/SectionText" element={<SectionText />}></Route>
               
               
             </Route>

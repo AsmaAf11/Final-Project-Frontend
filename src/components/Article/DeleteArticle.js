@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Container, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import './css/Article.css'
 
 export default function DeleteArticle() {
   const { id } = useParams();
@@ -41,11 +42,11 @@ export default function DeleteArticle() {
   };
 
   return (
-    <div className="cardsRow" style={{ columnCount: 1 }}>
+    <div className="row " style={{width:'80%',height:'100%',textAlign:'center',position:'relative',margin:'0 auto'}}>
       {data.map((e) => {
         return (
-          <Container className="pt-5">
-            <Card style={{ width: "30rem" }}>
+          <div className="col-8 col-md-6">
+              <Card style={{ width: "50rem" ,  marginBottom:'20px',}}>
               <Card.Img
                 style={{ width: "100%", height: "350px" }}
                 variant="top"
@@ -77,7 +78,7 @@ export default function DeleteArticle() {
                   </Button>
                 </Card.Text>
             </Card>
-          </Container>
+          </div>
         );
       })}
     </div>

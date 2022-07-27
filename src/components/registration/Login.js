@@ -31,6 +31,7 @@ function Login() {
         localStorage.setItem("id", res.data.id);
         localStorage.setItem("username", res.data.username);
         localStorage.setItem("token", res.data.token);
+        alert("Logged in Successfuly");
         navigate("/");
         //   if (res.status === 200) {
         //     localStorage.setItem("token", res.data.token);
@@ -76,6 +77,7 @@ function Login() {
 
               <div className="card bg-glass">
                 <div className="card-body px-4 py-5 px-md-5">
+                  <h3 className="reg-title">Login</h3>
                   <input
                     type="text"
                     className="form-control"
@@ -94,19 +96,35 @@ function Login() {
                   />
                   <label className="form-label">Password</label>
                   <br></br>
-                  <button
-                    type="button"
-                    className="btn btn-outline-primary"
-                    data-mdb-ripple-color="dark"
-                    style={{
-                      marginRight: "10px",
-                      width: "100px",
-                      fontWeight: "bold",
-                    }}
-                    onClick={login}
-                  >
-                    Login
-                  </button>
+                  <div className="d-flex justify-content-around">
+                    <button
+                      type="button"
+                      className="btn btn-outline-primary custom-btn"
+                      data-mdb-ripple-color="dark"
+                      style={{
+                        marginRight: "10px",
+                        width: "100px",
+                        fontWeight: "bold",
+                      }}
+                      onClick={login}
+                    >
+                      Login
+                    </button>
+                  </div>
+                  <div className="end-labels">
+                    <p>
+                      Don't have an account?
+                      <a
+                        href="/signup"
+                        style={{
+                          transition: "all 0.2s linear",
+                          marginLeft: 10,
+                        }}
+                      >
+                        Register
+                      </a>
+                    </p>
+                  </div>
                 </div>
                 <div className="text-center">
                   {/* <button

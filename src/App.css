@@ -261,14 +261,13 @@ a {
   outline: none;
 }
 .company{
-  justify-content: space-around;
-  align-items: center;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
 }
 .companyImg{
   height:100px;
   width: 180px;
   align-items: center;
-  justify-content: space-around;
-  justify-items: center;
-  
+  justify-content: space-around !important;
 }

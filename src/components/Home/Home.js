@@ -7,19 +7,14 @@ import comp1 from './comp1.svg'
 import comp2 from './comp2.svg'
 import comp3 from './comp3.svg'
 import comp4 from './comp4.svg'
+import Footer from "./Footer";
 
 function Home() {
   return (
     <>
       {/* <HomeArticles /> */}
       <Cards />
-      <div className="company">
-        <img className="companyImg" src={comp1}></img>
-        <img className="companyImg" src={comp2}></img>
-        <img className="companyImg" src={comp3}></img>
-        <img className="companyImg" src={comp4}></img>
-      </div>
-      
+   
     </>
   );
 }

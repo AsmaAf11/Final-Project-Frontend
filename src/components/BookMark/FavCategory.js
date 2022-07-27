@@ -31,7 +31,24 @@ function FavCategory() {
       });
   }, []);
 
-   
+
+  const deleteFav = () => {
+    axios
+      .delete(
+        `http://127.0.0.1:8000/delete_favCategory/${deleteFavCategory}/`,
+        config
+      )
+      .then((res) => {
+        setData(res.data.Favouites);
+        alert("deleted");
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  return (
     <div style={{width:'80%',height:'100%',textAlign:'center',position:'relative',margin:'0 auto'}}>
     {data.map((e) => {
       return (
@@ -67,6 +84,9 @@ function FavCategory() {
       );
     })}
   </div>
+  );
+}
+
 
 export default FavCategory;
 

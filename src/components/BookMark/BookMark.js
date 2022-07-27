@@ -71,10 +71,10 @@ function BookMark() {
         className="d-flex justify-content-between"
         style={{ marginLeft: "70px" }}
       >
-        <div className="card mb-3" style={{ width: "780px" }}>
+        <div className="card mb-3" style={{  height:"158px" }}>
           <div class="row no-gutters">
             <div class="col-md-4">
-              <img src={e.article.image} class="card-img" alt="..." />
+              <img src={e.article.image} class="card-img" style={{  height:"156px" }}  alt="..." />
             </div>
             <div class="col-md-8">
               <div class="card-body">

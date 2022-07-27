@@ -24,14 +24,7 @@ function ArticleByCategory() {
       });
   }, [id]);
 
-  // const SearchHandle = async (event) => {
-  //   let key = event.target.value;
-  //   let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
-  //   result = await result.json();
-  //   if (result) {
-  //     setData(result);
-  //   }
-  // };
+
   const Search = async (event) => {
     let key = event.target.value;
     axios

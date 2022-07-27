@@ -64,7 +64,7 @@ function Cards() {
                 />
                 </div>
                 <Card.Body
-               style={{ width: "100%", height: "0px" }}>
+               style={{ width: "100%", height: "1px" }}>
                   <Card.Title  className="cardTitle" >{e.name}</Card.Title>
                 </Card.Body>
                 

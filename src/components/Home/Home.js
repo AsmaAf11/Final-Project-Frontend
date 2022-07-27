@@ -46,7 +46,7 @@ function Home() {
 
     <br/>
  
-    <Carousel style={{height:'400px',width:'70%',marginLeft:'250px',marginRight:'100px'}}>
+    <Carousel style={{height:'400px',width:'70%',marginLeft:'17%'}}>
     {data.map((e) => {
         return (
       <Carousel.Item interval={1000}>

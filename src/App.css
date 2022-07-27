@@ -279,3 +279,9 @@ a {
   justify-items: center;
   
 }
+
+.cardTitle{
+  text-transform: capitalize;
+  font-size: 30px;
+  font-family: 'VT323', monospace;;
+}

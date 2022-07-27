@@ -78,18 +78,31 @@ export default function ViewDetails() {
       });
   };
 
-  // add Book mark
-  const addBookmark = () => {
-    axios
-      .post(`http://127.0.0.1:8000/add_bookmark/`, { bookMark }, config)
-      .then((res) => {
-        console.log(res.data);
-        navigate("/BookMark");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+    // comments
+    useEffect(() => {
+      axios
+        .get(`http://127.0.0.1:8000/view_comment/${id}/`)
+        .then((res) => {
+          console.log(res.data);
+          setComments(res.data.application);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
+    
+    
+    const addBookmark = () => {
+      axios
+        .post(`http://127.0.0.1:8000/add_bookmark/${id}/`, {}, config)
+        .then((res) => {
+          console.log(res.data);
+          navigate("/BookMark");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
 
   return (
     // view article details card
@@ -103,19 +116,13 @@ export default function ViewDetails() {
                 variant="top"
                 src={e.image}
               />
-
+              
               <Card.Body>
-                <Card.Title className="cardTitleText">
-                  Title: {e.title}
-                </Card.Title>
-                <Button
-                  onClick={() => {
-                    setBookMark(id);
-                    addBookmark();
-                  }}
-                >
-                  Add To BookMark
-                </Button>
+                <Card.Title className="cardTitleText">Title: {e.title} </Card.Title>
+
+                <Button onClick={()=>{
+                      addBookmark();
+                    }} >Add To BookMark</Button>
                 <Card.Text className="cardParagraphText">
                   Content:
                   <br /> {e.content}

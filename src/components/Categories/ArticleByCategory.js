@@ -49,21 +49,21 @@ function ArticleByCategory() {
   let [counter, setCounter] = useState(0);
   const [likes, SetLike] = useState(0);
 
-  const addlike = () => {
-    setCounter(counter++);
+  // const addlike = () => {
+  //   setCounter(counter++);
 
-    axios
-      .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
-        likes,
-      })
-      .then((res) => {
-        console.log(res.data);
-        SetLike(res.data.Articles);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  //   axios
+  //     .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
+  //       likes,
+  //     })
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       SetLike(res.data.Articles);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   return (
     <>
       <input
@@ -101,7 +101,7 @@ function ArticleByCategory() {
                   </Card.Text>
                   <span className="d-flex">
                     <div className="likeborder">
-                      <Card.Text>
+                      {/* <Card.Text>
                         {" "}
                         <div className="clickonimg" onClick={addlike}>
                           <img
@@ -111,7 +111,7 @@ function ArticleByCategory() {
                           />
                         </div>{" "}
                         <hr /> <div>{e.likes}</div>
-                      </Card.Text>
+                      </Card.Text> */}
                     </div>
                   </span>
                   <br />
@@ -123,7 +123,7 @@ function ArticleByCategory() {
                     View Articles
                   </Button>
                   <Card.Footer className="text-muted">
-                    Publisehd at: {e.created_at} by {e.user.username}
+                    {/* Publisehd at: {e.created_at} by {e.user.username} */}
                   </Card.Footer>
                 </Card.Body>
               </Card>

@@ -36,8 +36,7 @@ function PArticles() {
   // }, []);
 
   return (
-    <div> 
-      <h3>My Articles</h3>
+    <div>
       {data.map((e) => {
         return (
           <Container className="pt-5">
@@ -55,7 +54,24 @@ function PArticles() {
                     navigate(`/ViewDetails/${e.id}`);
                   }}
                 >
-                  View Articles
+                  View
+                </Button>
+
+                <Button
+                  onClick={() => {
+                    navigate(`/UpdateArticle/${e.id}`);
+                  }}
+                  style={{ marginLeft: 10 }}
+                >
+                  Update
+                </Button>
+                <Button
+                  onClick={() => {
+                    navigate(`/DeleteArticle/${e.id}`);
+                  }}
+                  style={{ marginLeft: 10 }}
+                >
+                  Delete
                 </Button>
                 {/* </Link */}
               </Card.Body>

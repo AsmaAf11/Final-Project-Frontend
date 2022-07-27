@@ -15,6 +15,9 @@ import Logout from "./components/registration/Logout";
 import ViewDetails from "./components/Article/ViewDetails";
 import HomeArticles from "./components/Article/HomeArticles";
 import BookMark from'./components/BookMark/BookMark.js'
+import UpdateArticle from "./components/Article/UpdateArticle";
+import DeleteArticle from "./components/Article/DeleteArticle";
+
 
 
 function App() {
@@ -25,6 +28,7 @@ function App() {
         <Router>
           <Routes>
             <Route>
+            
               <Route path="/AddArticle" element={<AddArticle />}></Route>
               <Route path="/Header" element={<Header />}></Route>
               <Route path="/Footer" element={<Footer />}></Route>
@@ -51,8 +55,10 @@ function App() {
 
               <Route path="/PArticles" element={<PArticles />}></Route>
               <Route path="/ViewDetails/:id" element={<ViewDetails />}></Route>
+              <Route path="/UpdateArticle/:id" element={<UpdateArticle />}></Route>
+              <Route path="/DeleteArticle/:id" element={<DeleteArticle />}></Route>
               <Route path="/HomeArticles" element={<HomeArticles />}></Route>
-
+              
               
             </Route>
           </Routes>

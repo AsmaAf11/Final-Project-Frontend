@@ -55,7 +55,7 @@ function ArticleByCategory() {
       .catch((err) => {
         console.log(err);
       });
-  };
+  
 
   //   axios
   //     .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
@@ -143,5 +143,6 @@ function ArticleByCategory() {
       </div>
     </>
   );
+      }
 
 export default ArticleByCategory;

@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Card, Container, Button } from "react-bootstrap";
+import { Card, Container, Button, Form } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-
+import bookmarkicon from "./bookmarkicon.png"
 export default function ViewDetails() {
   const { id } = useParams();
   const [data, setData] = useState([]);
@@ -109,36 +109,71 @@ export default function ViewDetails() {
       {data.map((e) => {
         return (
           <Container className="pt-5">
-            <Card style={{ width: "30rem" }}>
-              <Card.Img
-                style={{ width: "100%", height: "350px" }}
+   
+              <img
+                style={{ width: "100%", height: "450px" }}
                 variant="top"
                 src={e.image}
               />
               
-              <Card.Body>
-                <Card.Title className="cardTitleText">Title: {e.title} </Card.Title>
+             
+                <h2 className="cardTitleText"> {e.title} </h2>
 
-                <Button onClick={()=>{
+                
+                <div className="  article-content">
+                <div onClick={()=>{
                       addBookmark();
-                    }} >Add To BookMark</Button>
-                <Card.Text className="cardParagraphText">
-                  Content:
+                    }} ><img className="bookmark-img" src={bookmarkicon}/></div>
+                
+                <p className="cardParagraphText">
                   <br /> {e.content}
-                </Card.Text>
-                <Card.Text className="cardParagraphText">
+                </p>
+                <p className="cardParagraphText">
                   Summary:
                   <br /> {e.summary}
-                </Card.Text>
-                <Card.Text>Likes: {e.likes}</Card.Text>
-                <Card.Footer className="text-muted">
+                </p>
+                <p className="text-muted">
                   Publisehd at: {e.created_at} by {e.username}
-                </Card.Footer>
-              </Card.Body>
-            </Card>
+                </p>
+                </div>
+            
           </Container>
         );
       })}
+
+            {/* add comment */}
+            <section className="add_article">
+        <h1 className="title"> Add Comment</h1>
+        <div className="container">
+          <div className="add-form row">
+            <div className="form-field col-lg-6">
+              <input
+                id="content"
+                className="input-text"
+                type={"text"}
+                onChange={(e) => {
+                  setContent(e.target.value);
+                }}
+              ></input>
+              <label htmlFor="content" className="label">
+                Comment:
+              </label>
+            </div>
+
+            <div className="form-field text-center">
+              <input
+                className="submit-btn"
+                type={"submit"}
+                value="Add Comment"
+                onClick={addComment}
+              ></input>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+   
 
       {/* view comments delete in the same card*/}
       {comments.map((ec) => {
@@ -179,36 +214,7 @@ export default function ViewDetails() {
         );
       })}
 
-      {/* add comment */}
-      <section className="add_article ">
-        <h1 className="title"> Add Comment</h1>
-        <div className="container">
-          <div className="add-form row">
-            <div className="form-field col-lg-6">
-              <input
-                id="content"
-                className="input-text"
-                type={"text"}
-                onChange={(e) => {
-                  setContent(e.target.value);
-                }}
-              ></input>
-              <label htmlFor="content" className="label">
-                Comment:
-              </label>
-            </div>
 
-            <div className="form-field col-lg-12 text-center">
-              <input
-                className="submit-btn"
-                type={"submit"}
-                value="add cpmment"
-                onClick={addComment}
-              ></input>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

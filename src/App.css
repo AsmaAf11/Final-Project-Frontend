@@ -158,7 +158,7 @@ a {
   margin-right: -50;
 }
 
-.card:hover {
+.categoryimg:hover {
   transition: all 0.2s linear;
 }
 
@@ -166,7 +166,7 @@ a {
   overflow: hidden;
 }
 
-.card-img-top {
+.categoryimg {
   transform: scale(1);
   transition: all 0.2s ease-in-out;
 }
@@ -176,7 +176,7 @@ a {
 }
 
 .cardTitleText {
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-align: center;
   letter-spacing: 3px;
   font-size: 3em;
@@ -220,9 +220,8 @@ a {
   display: block;
 
   text-align: justify;
-
   display: block;
-  color: white;
+  color: black;
 
   text-align: justify;
 }
@@ -265,6 +264,25 @@ a {
   justify-items: center;
   
 }
+
+.article-content{
+  border: #f7f4ef solid;
+  border-radius: 3px;
+  margin: 20px;
+  padding: 50px;
+}
+.bookmark-img{
+
+  height: 60px;
+  cursor: pointer;
+
+}
+
+
+
+/* comments styling */
+
+
 .cardTitle{
   text-transform: capitalize;
   font-size: 30px;

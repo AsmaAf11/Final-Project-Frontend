@@ -39,23 +39,6 @@ function ArticleByCategory() {
         console.log(error.response);
       });
   };
-  let [counter, setCounter] = useState(0);
-  const [likes, SetLike] = useState(0);
-
-
-
-
-    axios
-      .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
-        likes,
-      })
-      .then((res) => {
-        console.log(res.data);
-        SetLike(res.data.Articles);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   
      
 

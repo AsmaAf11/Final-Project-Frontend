@@ -39,36 +39,7 @@ function ArticleByCategory() {
         console.log(error.response);
       });
   };
-  let [counter, setCounter] = useState(0);
-  const [likes, SetLike] = useState(0);
-
-
-
-    axios
-      .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
-        likes,
-      })
-      .then((res) => {
-        console.log(res.data);
-        SetLike(res.data.Articles);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   
-
-  //   axios
-  //     .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
-  //       likes,
-  //     })
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       SetLike(res.data.Articles);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   return (
     <>
@@ -94,7 +65,7 @@ function ArticleByCategory() {
             <div className="col-8 col-md-6">
               <Card
                 style={{ width: "28rem", marginBottom: "20px" }}
-                className="border-dark"
+                className="border-light"
               >
                 <Card.Img
                   style={{ width: "100%", height: "350px" }}
@@ -106,23 +77,7 @@ function ArticleByCategory() {
                   <Card.Text className="cardParagraphText">
                     {e.summary}
                   </Card.Text>
-                  <span className="d-flex">
-                    <div className="likeborder">
-                      <Card.Text>
-                        {" "}
-                        {/* <div className="clickonimg" onClick={addlike}> */}
-                        <div className="clickonimg">
-                          <img
-                            className="cardlikeimg"
-                            src={like}
-                            alt="cardlikeimg"
-                          />
-                        </div>{" "}
-                        <hr /> <div>{e.likes}</div>
-                      </Card.Text>
-                    </div>
-                  </span>
-                  <br />
+                  
                   <Button
                     onClick={() => {
                       navigate(`/ViewDetails/${e.id}`);

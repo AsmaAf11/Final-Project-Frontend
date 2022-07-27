@@ -31,6 +31,8 @@ function Cards() {
       .post(`http://127.0.0.1:8000/add_favCategory/${idCategory}/`, {}, config)
       .then((res) => {
         console.log(res.data);
+        alert('added')
+        // window.location.reload();
       })
       .catch((error) => {
         console.log(error);
@@ -71,6 +73,7 @@ function Cards() {
                 <div className="d-flex" onClick={()=>{
                   setIdCategory(e.id);
                   addFavCategory();
+                  alert('added')
                 }} ><img  className="clickonimg" style={{  height: "40px" ,backgroundColor:"white"}} src={bookmark}/></div>
 
                

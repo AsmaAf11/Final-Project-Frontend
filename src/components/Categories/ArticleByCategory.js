@@ -2,7 +2,7 @@ import { Card, Container, Button } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import like from "../Home/like.png";
+
 
 function ArticleByCategory() {
   const { id } = useParams();

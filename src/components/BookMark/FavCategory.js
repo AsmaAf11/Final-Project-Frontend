@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import PArticles from '../Article/PArticles'
 import { Card, Container, Button } from "react-bootstrap";
+import removefav from './removefav.png'
+
 
 function FavCategory() {
     const { id } = useParams();
@@ -46,39 +48,42 @@ function FavCategory() {
   
     return (
 
-        <div >
-      {data.map((e) => {
-        return (
-          <Container className="pt-5">
-            
-              <Card style={{ width: "30rem" }} className="border-dark">
-              <div
-              onClick={() => {
-                navigate(`/articlesCategories/${e.category.id}`);
-              }}
-            >   <Card.Img
-            style={{ width: "100%", height: "350px" }}
-            variant="top"
-            src={e.category.image}
-          /></div>
-                <Card.Body>
-                  <Card.Title className="cardTitleText">{e.category.name}</Card.Title>
-                  
-                </Card.Body>
-                <Button className="btn btn-danger"
-                    onClick={()=>{
-                      setDeleteFavCategory(e.id);
-                      deleteFav();
-                    }}
-                    style={{ marginBottom:'20px'}}
-                  >
-                    Unfavourite
-                  </Button>
-              </Card>
-          </Container>
-        );
-      })}
-    </div>
+   
+    <div style={{width:'80%',height:'100%',textAlign:'center',position:'relative',margin:'0 auto'}}>
+    {data.map((e) => {
+      return (
+        <div className="col-8 col-md-6">
+          
+            <Card style={{ width: "28rem" ,  marginBottom:'20px'}} className="border-dark shadow">
+            <div className="categoryimg clickonimg"
+            onClick={() => {
+              navigate(`/articlesCategories/${e.id}`);
+            }}
+          >
+              <Card.Img
+                style={{ width: "100%", height: "200px" }}
+                variant="top"
+                src={e.category.image}
+              />
+              </div>
+              <Card.Body
+             style={{ width: "100%", height: "1px" }}>
+                <Card.Title  className="cardTitle" >{e.category.name}</Card.Title>
+              </Card.Body>
+              
+              <div className="d-flex p-2"   
+          onClick={()=>{
+                 setDeleteFavCategory(e.id);
+                 deleteFav();
+                alert('added')}
+                       } ><img  className="clickonimg" style={{  height: "40px" ,backgroundColor:"white"}} src={removefav}/></div>
+
+             
+            </Card>
+        </div>
+      );
+    })}
+  </div>
 
     )
   }

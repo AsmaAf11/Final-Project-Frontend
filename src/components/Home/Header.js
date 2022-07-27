@@ -2,34 +2,57 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import { Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import BookMark from '../BookMark/BookMark.js'
-import "../../App.css";
-import Map from "./map.png";
-import login from "./log-in.png";
+import logo from "./knowledge_hub_logo.png";
 
 
 function Header() {
   return (
     <>
-      <Navbar bg="none" expand="lg">
-        <Container className="nav1">
-          <Navbar.Brand href="#home">
-            <img className="logo" alt="logo" src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-notes-icon-png-image_4151220.jpg"  width="30px" />
+      <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
+        <Container>
+          <Navbar.Brand href="/">
+            <img src={logo} alt=" logo" style={{ hight: 150, width: 150 }} />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/"className="Links">Home</Nav.Link>
-              <Nav.Link href="/categories" className="Links">Catagories </Nav.Link>
-              <Nav.Link href="/BookMark"className="Links">BookMark </Nav.Link>
-              <Nav.Link href="/signup">
-                {" "}
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            {/*This totally empty navbar with the class 'me-auto' is significant. */}
+            <Nav className="me-auto"></Nav>
+            {/*It is responsible for the other nav bar content moving to the right.*/}
+            <Nav>
+              <Nav.Link
+                href="/"
+                style={{ color: "#545454", fontWeight: "bold" }}
+              >
+                Home
+              </Nav.Link>
+              <Nav.Link
+                href="/categories"
+                style={{ color: "#545454", fontWeight: "bold" }}
+              >
+                Categories
+              </Nav.Link>
+              <Nav.Link
+                href="/BookMark"
+                style={{ color: "#545454", fontWeight: "bold" }}
+              >
+                Bookmark
+              </Nav.Link>
+              <Nav.Link
+                href="/PArticles"
+                style={{ color: "#545454", fontWeight: "bold" }}
+              >
+                My Articles
+              </Nav.Link>
+              <Nav.Link
+                href="/signup"
+                style={{ color: "#545454", fontWeight: "bold" }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
-                  fill="white"
-                  className="bi bi-person-plus-fill"
+                  fill="black"
+                  classNameName="bi bi-person-plus-fill"
                   viewBox="0 0 16 16"
                 >
                   <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -44,8 +67,8 @@ function Header() {
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
-                  fill="white"
-                  className="bi bi-box-arrow-in-right"
+                  fill="black"
+                  classNameName="bi bi-box-arrow-in-right"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -58,7 +81,6 @@ function Header() {
                   />
                 </svg>
               </Nav.Link>
-        
             </Nav>
           </Navbar.Collapse>
         </Container>

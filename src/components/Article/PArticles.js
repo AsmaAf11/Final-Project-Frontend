@@ -6,6 +6,7 @@ import { Card, Container, Button } from "react-bootstrap";
 function PArticles() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+  
   const accessToken = localStorage.getItem("token");
 
   useEffect(() => {

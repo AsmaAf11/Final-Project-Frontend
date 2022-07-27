@@ -3,12 +3,20 @@ import Cards from "../Categories/Cards";
 import PArticles from "../Article/PArticles";
 import BookMark from "../BookMark/BookMark.js";
 import HomeArticles from "../Article/HomeArticles";
+
 import Carousel from 'react-bootstrap/Carousel';
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, Container, Button } from "react-bootstrap";
+
+import comp1 from './comp1.svg'
+import comp2 from './comp2.svg'
+import comp3 from './comp3.svg'
+import comp4 from './comp4.svg'
+
+
 function Home() {
   const { id } = useParams();
   const [data, setData] = useState([]);
@@ -35,6 +43,7 @@ function Home() {
 
   return (
     <>
+
     <br/>
  
     <Carousel style={{height:'400px',width:'70%',marginLeft:'250px',marginRight:'100px'}}>
@@ -61,9 +70,22 @@ function Home() {
       )})}
     </Carousel>
       <HomeArticles />
+
+      {/* <HomeArticles /> */}
+
       <Cards />
+      <div className="company">
+        <img className="companyImg" src={comp1}></img>
+        <img className="companyImg" src={comp2}></img>
+        <img className="companyImg" src={comp3}></img>
+        <img className="companyImg" src={comp4}></img>
+      </div>
+      
     </>
   );
 }
 
 export default Home;
+
+
+

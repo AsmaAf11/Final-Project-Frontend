@@ -226,22 +226,7 @@ a {
 
   text-align: justify;
 }
-.cardlikeimg {
-  padding-right: 5px;
-  height: 25px;
-  width: 25px;
-}
-.likeborder {
-  border-collapse: separate;
-  border: solid black 1px;
-  border-radius: 10%;
-  color: black;
-  padding-right: 5px;
-  padding-left: 5px;
-  padding-top: 2px;
-  padding-bottom: 0px;
-  background-color: white;
-}
+
 
 .clickonimg {
   cursor: pointer;
@@ -309,7 +294,5 @@ a {
   border:#050405 1px solid;
  
 }
-
-
 
 

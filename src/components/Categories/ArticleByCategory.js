@@ -26,14 +26,7 @@ function ArticleByCategory() {
       });
   }, [id]);
 
-  // const SearchHandle = async (event) => {
-  //   let key = event.target.value;
-  //   let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
-  //   result = await result.json();
-  //   if (result) {
-  //     setData(result);
-  //   }
-  // };
+
   const Search = async (event) => {
     let key = event.target.value;
     axios
@@ -49,8 +42,6 @@ function ArticleByCategory() {
   let [counter, setCounter] = useState(0);
   const [likes, SetLike] = useState(0);
 
-  // const addlike = () => {
-  //   setCounter(counter++);
 
 
 
@@ -66,7 +57,7 @@ function ArticleByCategory() {
         console.log(err);
       });
   
-
+     
 
   return (
     <>
@@ -90,16 +81,15 @@ function ArticleByCategory() {
       >
 
 
-
         {data?.map((e) => {
           return (
-            <div className="col-8 col-md-6">
+            <div className="col-8 col-md-6" style={{marginTop:'30px'}}>
               <Card 
                 style={{ width: "28rem", marginBottom: "20px" }}
                 className="cardBorder" 
               >
                 <Card.Img className="ArticleImg"
-                  style={{ width: "100%", height: "350px" }}
+                  style={{ width: "100%", height: "250px" }}
                   variant="top"
                   src={e.image}
                 />

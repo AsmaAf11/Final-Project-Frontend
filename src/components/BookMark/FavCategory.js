@@ -49,7 +49,6 @@ function FavCategory() {
       {data.map((e) => {
         return (
           <Container className="pt-5">
-            
               <Card style={{ width: "30rem" }} className="border-dark">
               <div
               onClick={() => {

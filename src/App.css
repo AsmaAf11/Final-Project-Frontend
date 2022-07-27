@@ -5,7 +5,7 @@ div.App {
 
 /* Header css */
 
-.nav1 {
+/* .nav1 {
   align-items: space-around !important;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -144,7 +144,7 @@ a {
 .bg-glass {
   background-color: hsla(0, 0%, 100%, 0.9) !important;
   backdrop-filter: saturate(200%) blur(25px);
-}
+} */
 /* Cards css */
 
 .cardsRow {

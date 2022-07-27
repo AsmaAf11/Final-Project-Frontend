@@ -49,21 +49,21 @@ function ArticleByCategory() {
   let [counter, setCounter] = useState(0);
   const [likes, SetLike] = useState(0);
 
-  const addlike = () => {
-    setCounter(counter++);
+  // const addlike = () => {
+  //   setCounter(counter++);
 
-    axios
-      .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
-        likes,
-      })
-      .then((res) => {
-        console.log(res.data);
-        SetLike(res.data.Articles);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  //   axios
+  //     .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
+  //       likes,
+  //     })
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       SetLike(res.data.Articles);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   return (
     <>
       <input
@@ -103,7 +103,8 @@ function ArticleByCategory() {
                     <div className="likeborder">
                       <Card.Text>
                         {" "}
-                        <div className="clickonimg" onClick={addlike}>
+                        {/* <div className="clickonimg" onClick={addlike}> */}
+                        <div className="clickonimg">
                           <img
                             className="cardlikeimg"
                             src={like}
@@ -123,7 +124,7 @@ function ArticleByCategory() {
                     View Articles
                   </Button>
                   <Card.Footer className="text-muted">
-                    Publisehd at: {e.created_at} by {e.user.username}
+                    Publisehd at: {e.created_at} by {e.publisher}
                   </Card.Footer>
                 </Card.Body>
               </Card>

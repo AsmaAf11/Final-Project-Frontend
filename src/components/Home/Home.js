@@ -7,7 +7,7 @@ import HomeArticles from "../Article/HomeArticles";
 function Home() {
   return (
     <>
-      <HomeArticles />
+      {/* <HomeArticles /> */}
       <Cards />
     </>
   );

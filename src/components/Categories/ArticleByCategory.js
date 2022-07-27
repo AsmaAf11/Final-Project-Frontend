@@ -123,7 +123,7 @@ function ArticleByCategory() {
                     View Articles
                   </Button>
                   <Card.Footer className="text-muted">
-                    Publisehd at: {e.created_at} by {e.user.username}
+                    Publisehd at: {e.created_at} by {e.user}
                   </Card.Footer>
                 </Card.Body>
               </Card>

@@ -33,12 +33,13 @@ function BookMark() {
 
   const deleteBookMark= () => {
     axios
-      .delete(`http://127.0.0.1:8000/delete_bookmark/${deleteBookMarkId}/`, config)
+      .delete(`http://127.0.0.1:8000/delete_bookmark/14/`, config)
       .then((res) => {
+        console.log('inside http delete method');
         setData(res.data.Bookmark);
-        
       })
       .catch((error) => {
+        console.log('inside http delete method / catch part');
         console.log(error);
       });
   };

@@ -97,7 +97,6 @@ export default function ViewDetails() {
         .post(`http://127.0.0.1:8000/add_bookmark/${id}/`, {}, config)
         .then((res) => {
           console.log(res.data);
-          navigate("/BookMark");
         })
         .catch((error) => {
           console.log(error);

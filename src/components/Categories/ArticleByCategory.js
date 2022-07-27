@@ -68,20 +68,10 @@ function ArticleByCategory() {
   
 
 
-  //   axios
-  //     .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
-  //       likes,
-  //     })
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       SetLike(res.data.Articles);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
   return (
     <>
+
+
       <input
         type=""
         className="search-box"
@@ -98,14 +88,17 @@ function ArticleByCategory() {
           margin: "0 auto",
         }}
       >
+
+
+
         {data?.map((e) => {
           return (
             <div className="col-8 col-md-6">
-              <Card
+              <Card 
                 style={{ width: "28rem", marginBottom: "20px" }}
-                className="border-dark"
+                className="cardBorder" 
               >
-                <Card.Img
+                <Card.Img className="ArticleImg"
                   style={{ width: "100%", height: "350px" }}
                   variant="top"
                   src={e.image}
@@ -115,31 +108,17 @@ function ArticleByCategory() {
                   <Card.Text className="cardParagraphText">
                     {e.summary}
                   </Card.Text>
-                  <span className="d-flex">
-                    <div className="likeborder">
-                      {/* <Card.Text>
-                        {" "}
-                        <div className="clickonimg" onClick={addlike}>
-                          <img
-                            className="cardlikeimg"
-                            src={like}
-                            alt="cardlikeimg"
-                          />
-                        </div>{" "}
-                        <hr /> <div>{e.likes}</div>
-                      </Card.Text> */}
-                    </div>
-                  </span>
+                 
                   <br />
-                  <Button
+                  <button className="catagoryToArticleButton"
                     onClick={() => {
                       navigate(`/ViewDetails/${e.id}`);
                     }}
                   >
                     View Articles
-                  </Button>
+                  </button>
                   <Card.Footer className="text-muted">
-                    {/* Publisehd at: {e.created_at} by {e.user.username} */}
+                    Publisehd at: {e.created_at} by {e.username}
                   </Card.Footer>
                 </Card.Body>
               </Card>

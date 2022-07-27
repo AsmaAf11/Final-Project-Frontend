@@ -12,7 +12,7 @@ export default function ViewDetails() {
     const [comments,setComments]= useState([]);
     // post
     const [content,setContent]= useState();
-    const [bookMark,setBookMark]= useState();
+    // const [bookMark,setBookMark]= useState();
     const navigate = useNavigate();
 
 
@@ -63,7 +63,7 @@ export default function ViewDetails() {
     
     const addBookmark = () => {
       axios
-        .post(`http://127.0.0.1:8000/add_bookmark/`, {bookMark}, config)
+        .post(`http://127.0.0.1:8000/add_bookmark/${id}/`, {}, config)
         .then((res) => {
           console.log(res.data);
           navigate("/BookMark");
@@ -89,9 +89,8 @@ export default function ViewDetails() {
               <Card.Body>
                 
                 <Card.Title className="cardTitleText">Title: {e.title} </Card.Title>
-                
+
                 <Button onClick={()=>{
-                      setBookMark(id);
                       addBookmark();
                     }} >Add To BookMark</Button>
 

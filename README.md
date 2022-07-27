@@ -34,12 +34,11 @@
 #### BookMarks
 ##### what needs to be added:
 - styling the page
-- view favourite category **endpoint** (http://127.0.0.1:8000/list_favCategory/) 
-- delete favourite category **endpoint** (http://127.0.0.1:8000/delete_favCategory/<bookmark_id>/) 
 
 ##### Not Working right:
+ 
+- deleting works but the page becomes empty and needs refresh
 
-- delete a bookmark: deleting works but the page becomes empty and needs refresh
 
 ------------
 

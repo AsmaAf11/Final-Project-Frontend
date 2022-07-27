@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import PArticles from '../Article/PArticles'
 import { Card, Container, Button } from "react-bootstrap";
+import FavCategory from "./FavCategory";
+
 function BookMark() {
   const { id } = useParams();
   const [data, setData] = useState([]);
@@ -44,6 +46,10 @@ function BookMark() {
 
   return (
       <div>
+
+        <div> <FavCategory/></div>
+         
+        
     {data.map((e) => {
         return (
           <Container className="pt-5">
@@ -70,7 +76,7 @@ function BookMark() {
                     }}
                     style={{ marginBottom:'20px'}}
                   >
-                    Delete BookMark
+                    UnBookMark
                   </Button>
               </Card.Body>
             </Card>

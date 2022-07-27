@@ -72,11 +72,23 @@ function ArticleByCategory() {
         placeholder="Search"
         onChange={Search}
       />
-      <div className="cardsRow" style={{ columnCount: 1 }}>
+      <div
+        className="row "
+        style={{
+          width: "80%",
+          height: "100%",
+          textAlign: "center",
+          position: "relative",
+          margin: "0 auto",
+        }}
+      >
         {data?.map((e) => {
           return (
-            <Container className="pt-5">
-              <Card style={{ width: "30rem" }} key={e.id}>
+            <div className="col-8 col-md-6">
+              <Card
+                style={{ width: "28rem", marginBottom: "20px" }}
+                className="border-dark"
+              >
                 <Card.Img
                   style={{ width: "100%", height: "350px" }}
                   variant="top"
@@ -92,7 +104,11 @@ function ArticleByCategory() {
                       <Card.Text>
                         {" "}
                         <div className="clickonimg" onClick={addlike}>
-                          <img className="cardlikeimg" src={like} alt='cardlikeimg'/>
+                          <img
+                            className="cardlikeimg"
+                            src={like}
+                            alt="cardlikeimg"
+                          />
                         </div>{" "}
                         <hr /> <div>{e.likes}</div>
                       </Card.Text>
@@ -107,11 +123,11 @@ function ArticleByCategory() {
                     View Articles
                   </Button>
                   <Card.Footer className="text-muted">
-                    Publisehd at: {e.created_at} by {e.publisher}
+                    Publisehd at: {e.created_at} by {e.user.username}
                   </Card.Footer>
                 </Card.Body>
               </Card>
-            </Container>
+            </div>
           );
         })}
       </div>

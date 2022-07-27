@@ -20,16 +20,17 @@ function Cards() {
   }, []);
 
   return (
-    <div className="cardsRow">
+    <div className="row " style={{width:'80%',height:'100%',textAlign:'center',position:'relative',margin:'0 auto'}}>
       {data.map((e) => {
         return (
-          <Container className="pt-5">
+          <div className="col-8 col-md-6">
             <div
               onClick={() => {
                 navigate(`/articlesCategories/${e.id}`);
               }}
             >
-              <Card style={{ width: "30rem" }} className="border-dark">
+            {/* <Card style={{width:'100%',height:'100px',display:'inline-block',lineHeight:'100px',backgroundColor:'white',marginBottom:'30px'}}className="border-dark"> */}
+              <Card style={{ width: "28rem" ,  marginBottom:'20px'}} className="border-dark">
                 <Card.Img
                   style={{ width: "100%", height: "350px" }}
                   variant="top"
@@ -40,7 +41,7 @@ function Cards() {
                 </Card.Body>
               </Card>
             </div>
-          </Container>
+          </div>
         );
       })}
     </div>

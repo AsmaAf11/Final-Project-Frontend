@@ -1,4 +1,4 @@
-/* Background css */
+Background css
 div.App {
   background-color: #f7f4ef;
 }
@@ -176,12 +176,19 @@ a {
 }
 
 .cardTitleText {
-  color: white;
-  text-transform: capitalize;
+  text-transform: uppercase;
   text-align: center;
+  letter-spacing: 3px;
+  font-size: 3em;
+  line-height: 48px;
+  padding-bottom: 20px;
+  color: #5543ca;
+  background: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .card {
-  background-color: #f3e9dd !important;
+  background-color: #ffffff !important;
 }
 
 .card:hover {
@@ -270,4 +277,12 @@ a {
   width: 180px;
   align-items: center;
   justify-content: space-around !important;
+  justify-items: center;
+  
+}
+.cardTitle{
+  text-transform: capitalize;
+  font-size: 30px;
+  font-family: 'VT323', monospace;;
+
 }

@@ -26,7 +26,14 @@ function ArticleByCategory() {
       });
   }, [id]);
 
-
+  // const SearchHandle = async (event) => {
+  //   let key = event.target.value;
+  //   let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
+  //   result = await result.json();
+  //   if (result) {
+  //     setData(result);
+  //   }
+  // };
   const Search = async (event) => {
     let key = event.target.value;
     axios
@@ -41,6 +48,9 @@ function ArticleByCategory() {
   };
   let [counter, setCounter] = useState(0);
   const [likes, SetLike] = useState(0);
+
+  // const addlike = () => {
+  //   setCounter(counter++);
 
 
 
@@ -57,6 +67,7 @@ function ArticleByCategory() {
       });
   
 
+
   //   axios
   //     .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
   //       likes,
@@ -69,16 +80,14 @@ function ArticleByCategory() {
   //       console.log(err);
   //     });
   // };
-
   return (
     <>
-    <div className="form-field col-lg-2">
       <input
         type=""
         className="search-box"
         placeholder="Search"
         onChange={Search}
-      /></div>
+      />
       <div
         className="row "
         style={{
@@ -108,10 +117,9 @@ function ArticleByCategory() {
                   </Card.Text>
                   <span className="d-flex">
                     <div className="likeborder">
-                      <Card.Text>
+                      {/* <Card.Text>
                         {" "}
-                        {/* <div className="clickonimg" onClick={addlike}> */}
-                        <div className="clickonimg">
+                        <div className="clickonimg" onClick={addlike}>
                           <img
                             className="cardlikeimg"
                             src={like}
@@ -119,7 +127,7 @@ function ArticleByCategory() {
                           />
                         </div>{" "}
                         <hr /> <div>{e.likes}</div>
-                      </Card.Text>
+                      </Card.Text> */}
                     </div>
                   </span>
                   <br />
@@ -131,9 +139,7 @@ function ArticleByCategory() {
                     View Articles
                   </Button>
                   <Card.Footer className="text-muted">
-
-                    Publisehd at: {e.created_at} by {e.user}
-
+                    {/* Publisehd at: {e.created_at} by {e.user.username} */}
                   </Card.Footer>
                 </Card.Body>
               </Card>
@@ -143,6 +149,10 @@ function ArticleByCategory() {
       </div>
     </>
   );
-      }
+
+}
+
+      
+
 
 export default ArticleByCategory;

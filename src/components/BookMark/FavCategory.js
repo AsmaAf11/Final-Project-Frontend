@@ -66,7 +66,7 @@ function FavCategory() {
                 </Card.Body>
                 <Button className="btn btn-danger"
                     onClick={()=>{
-                        setDeleteFavCategory(e.id);
+                      setDeleteFavCategory(e.id);
                       deleteFav();
                     }}
                     style={{ marginBottom:'20px'}}

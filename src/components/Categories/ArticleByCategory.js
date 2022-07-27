@@ -52,6 +52,22 @@ function ArticleByCategory() {
   // const addlike = () => {
   //   setCounter(counter++);
 
+
+
+    axios
+      .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
+        likes,
+      })
+      .then((res) => {
+        console.log(res.data);
+        SetLike(res.data.Articles);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  
+
+
   //   axios
   //     .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
   //       likes,
@@ -133,5 +149,10 @@ function ArticleByCategory() {
       </div>
     </>
   );
+
 }
+
+      
+
+
 export default ArticleByCategory;

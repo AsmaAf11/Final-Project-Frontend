@@ -26,14 +26,7 @@ function ArticleByCategory() {
       });
   }, [id]);
 
-  // const SearchHandle = async (event) => {
-  //   let key = event.target.value;
-  //   let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
-  //   result = await result.json();
-  //   if (result) {
-  //     setData(result);
-  //   }
-  // };
+
   const Search = async (event) => {
     let key = event.target.value;
     axios
@@ -49,8 +42,7 @@ function ArticleByCategory() {
   let [counter, setCounter] = useState(0);
   const [likes, SetLike] = useState(0);
 
-  const addlike = () => {
-    setCounter(counter++);
+
 
     axios
       .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
@@ -63,15 +55,30 @@ function ArticleByCategory() {
       .catch((err) => {
         console.log(err);
       });
-  };
+  
+
+  //   axios
+  //     .post(`http://127.0.0.1:8000/add_ArticleLike/${id}/`, {
+  //       likes,
+  //     })
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       SetLike(res.data.Articles);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
   return (
     <>
+    <div className="form-field col-lg-2">
       <input
         type=""
         className="search-box"
         placeholder="Search"
         onChange={Search}
-      />
+      /></div>
       <div
         className="row "
         style={{
@@ -103,7 +110,8 @@ function ArticleByCategory() {
                     <div className="likeborder">
                       <Card.Text>
                         {" "}
-                        <div className="clickonimg" onClick={addlike}>
+                        {/* <div className="clickonimg" onClick={addlike}> */}
+                        <div className="clickonimg">
                           <img
                             className="cardlikeimg"
                             src={like}
@@ -123,7 +131,9 @@ function ArticleByCategory() {
                     View Articles
                   </Button>
                   <Card.Footer className="text-muted">
+
                     Publisehd at: {e.created_at} by {e.user}
+
                   </Card.Footer>
                 </Card.Body>
               </Card>
@@ -133,5 +143,6 @@ function ArticleByCategory() {
       </div>
     </>
   );
-}
+      }
+
 export default ArticleByCategory;

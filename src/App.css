@@ -176,11 +176,7 @@ a {
 }
 
 .cardTitleText {
-<<<<<<< HEAD
   text-transform: capitalize;
-=======
-  text-transform: uppercase;
->>>>>>> d189bd74816b80bffd23799213585c2e9681d1b5
   text-align: center;
   letter-spacing: 3px;
   font-size: 3em;
@@ -283,9 +279,15 @@ a {
   
 }
 
+.article-content{
+  border: #f7f4ef solid;
+  border-radius: 3px;
+  margin: 20px;
+  padding: 50px;
+}
 .bookmark-img{
 
-  height: 30px;
+  height: 60px;
   cursor: pointer;
 
 }
@@ -294,11 +296,6 @@ a {
 
 /* comments styling */
 
-.commentStyle{
-  border: #9e9e9e solid;
-  background-color: white;
-  
-}
 
 .cardTitle{
   text-transform: capitalize;

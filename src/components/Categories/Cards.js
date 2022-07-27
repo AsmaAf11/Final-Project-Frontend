@@ -52,7 +52,7 @@ function Cards() {
             
             {/* <Card style={{width:'100%',height:'100px',display:'inline-block',lineHeight:'100px',backgroundColor:'white',marginBottom:'30px'}}className="border-dark"> */}
               <Card style={{ width: "28rem" ,  marginBottom:'20px'}} className="border-dark">
-              <div className="categoryimg"
+              <div className="categoryimg clickonimg"
               onClick={() => {
                 navigate(`/articlesCategories/${e.id}`);
               }}

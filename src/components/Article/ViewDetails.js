@@ -111,36 +111,38 @@ export default function ViewDetails() {
           <Container className="pt-5">
    
               <img
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%", height: "450px" }}
                 variant="top"
                 src={e.image}
               />
               
-              
-                <h2 className="cardTitleText">Title: {e.title} </h2>
+             
+                <h2 className="cardTitleText"> {e.title} </h2>
 
+                
+                <div className="  article-content">
                 <div onClick={()=>{
                       addBookmark();
                     }} ><img className="bookmark-img" src={bookmarkicon}/></div>
+                
                 <p className="cardParagraphText">
-                  Content:
                   <br /> {e.content}
                 </p>
                 <p className="cardParagraphText">
                   Summary:
                   <br /> {e.summary}
                 </p>
-                <p>Likes: {e.likes}</p>
                 <p className="text-muted">
                   Publisehd at: {e.created_at} by {e.username}
                 </p>
+                </div>
             
           </Container>
         );
       })}
 
             {/* add comment */}
-            <section className="add_article ">
+            <section className="add_article">
         <h1 className="title"> Add Comment</h1>
         <div className="container">
           <div className="add-form row">
@@ -171,17 +173,7 @@ export default function ViewDetails() {
       </section>
       
 
-      <div className='pt-2 commentStyle'>
-        <Form.Label>Add Comment</Form.Label>
-        <Form.Control as="textarea" aria-label="With textarea" 
-                onChange={(e)=>{setContent(e.target.value);}} />
-                
-
-            <div className='pt-2'>  <Button variant="info" className='text-white' onClick={addComment}>
-            Add Comment
-        </Button></div></div>
-           
-
+   
 
       {/* view comments delete in the same card*/}
       {comments.map((ec) => {

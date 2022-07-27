@@ -19,6 +19,7 @@ export default function Logout() {
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.clear();
+    alert('You Are Logged Out \n Login again')
     navigate("/login");
   };
 

@@ -117,10 +117,10 @@ export default function ViewDetails() {
               />
               
              
-                <h2 className="cardTitleText"> {e.title} </h2>
+                <h2 className="cardTitleText1 pt-3"> {e.title} </h2>
 
                 
-                <div className="  article-content">
+                <div className=" article-content">
                 <div onClick={()=>{
                       addBookmark();
                     }} ><img className="bookmark-img" src={bookmarkicon}/></div>
@@ -142,7 +142,7 @@ export default function ViewDetails() {
       })}
 
             {/* add comment */}
-            <section className="add_article">
+            {/* <section className="add_article">
         <h1 className="title"> Add Comment</h1>
         <div className="container">
           <div className="add-form row">
@@ -170,9 +170,43 @@ export default function ViewDetails() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
+      <Container className="commentbody1">
+            <Card className="commentbody">
+              <Card.Body> 
+                <Card.Title
+                
+                  style={{ textAlign: "left" }}
+                >
+                  Add Comment
+                </Card.Title>
 
+                <Card.Text className="cardParagraphText">
+                  <br />  <div className="form-field col-lg-6">
+              <input
+                id="content"
+                placeholder="comment here"
+                className="commentinput"
+                type={"text"}
+
+                onChange={(e) => {
+                  setContent(e.target.value);
+                }}
+              ></input>
+            </div>
+                </Card.Text>
+		        <div className="form-field text-center">
+              <input
+              style={{padding:'1px',paddingLeft:'10px',paddingRight:'10px',fontSize:'15px'}}
+                className="catagoryToArticleButton"
+                type={"submit"}
+                value="Add Comment"
+                onClick={addComment}
+              ></input></div>
+              </Card.Body>
+            </Card>
+          </Container>
    
 
       {/* view comments delete in the same card*/}
@@ -196,10 +230,10 @@ export default function ViewDetails() {
                   ></span>
                 </Card.Text>
                 <Card.Title
-                  className="cardTitleText"
+                
                   style={{ textAlign: "left" }}
                 >
-                  @{ec.username}
+                  @{ec.username} 
                 </Card.Title>
                 <Card.Text className="cardParagraphText">
                   <br /> {ec.content}

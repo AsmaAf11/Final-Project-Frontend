@@ -37,13 +37,14 @@ function BookMark() {
       .then((res) => {
         console.log('inside http delete method');
         setData(res.data.Bookmark);
+        alert("deleted");
+        window.location.reload();
       })
       .catch((error) => {
         console.log('inside http delete method / catch part');
         console.log(error);
       });
   };
-
 
   return (
       <div>

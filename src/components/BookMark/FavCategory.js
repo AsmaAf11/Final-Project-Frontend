@@ -35,7 +35,8 @@ function FavCategory() {
         .delete(`http://127.0.0.1:8000/delete_favCategory/${deleteFavCategory}/`, config)
         .then((res) => {
           setData(res.data.Favouites);
-          
+          alert('deleted')
+          window.location.reload();
         })
         .catch((error) => {
           console.log(error);

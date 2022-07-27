@@ -15,6 +15,8 @@ import comp3 from "./comp3.svg";
 import comp4 from "./comp4.svg";
 import Footer from "./Footer";
 import SectionText from "./SectionText";
+import guide from "./guide.jpeg";
+
 
 function Home() {
   const { id } = useParams();
@@ -49,7 +51,7 @@ function Home() {
       <Carousel style={{ height: "400px", width: "70%", marginLeft: "17%" }}>
         {data.map((e) => {
           return (
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={2500}>
               <img
                 style={{ height: "400px", width: "100%" }}
                 className="d-block w-100"
@@ -68,31 +70,42 @@ function Home() {
                   transform: "translate(-50%, -50%)",
                 }}
               >
-                <h3> {e.name}</h3>
+                <h1 style={{ textTransform:'capitalize' }}> {e.name}</h1>
               </Carousel.Caption>
             </Carousel.Item>
           );
         })}
       </Carousel>
-      {/* <HomeArticles /> */}
+    
+<div style={{marginBottom:'120px'}}></div>
+      <div style={{ height: "200px", width: "70%", marginLeft: "10%" }}>
+        <img src={guide} alt='m'></img>
+      </div>
+      <div style={{marginTop:'180px'}}></div>
+
+
 
       {/* <HomeArticles /> */}
 
-      <Cards />
+      {/* <HomeArticles /> */}
+
       <br></br>
       <div className="company">
-        <img className="companyImg" src={comp1}></img>
+        <img className="companyImg" src={comp1} alt=' '></img>
         <img
+        alt=' '
           className="companyImg"
           src={comp2}
           style={{ marginLeft: "50px" }}
         ></img>
         <img
+        alt=' '
           className="companyImg"
           src={comp3}
           style={{ marginLeft: "50px" }}
         ></img>
         <img
+        alt=' '
           className="companyImg"
           src={comp4}
           style={{ marginLeft: "50px" }}

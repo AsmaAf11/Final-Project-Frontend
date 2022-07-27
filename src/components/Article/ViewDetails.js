@@ -98,7 +98,7 @@ export default function ViewDetails() {
                 <Card.Text className="cardParagraphText">Summary:<br />  {e.summary}</Card.Text>
                 <Card.Text>Likes: {e.likes}</Card.Text>
                 <Card.Footer className="text-muted">
-                  Publisehd at: {e.created_at} by {e.publisher}
+                  Publisehd at: {e.created_at} by {e.username}
                 </Card.Footer>
               </Card.Body>
             </Card>
@@ -112,7 +112,7 @@ export default function ViewDetails() {
           <Container className="pt-5">
             <Card>
               <Card.Body>
-                <Card.Title className="cardTitleText">Username: {ec.user}</Card.Title>
+                <Card.Title className="cardTitleText">Username: {ec.username}</Card.Title>
                 <Card.Text className="cardParagraphText">Comment:<br /> {ec.content}</Card.Text>
   
                 <Card.Footer className="text-muted">

@@ -146,10 +146,7 @@ export default function ViewDetails() {
         return (
           <Container className="pt-5">
             <Card>
-              <Card.Body>
-                <Card.Title className="cardTitleText">Username: {ec.username}</Card.Title>
-                <Card.Text className="cardParagraphText">Comment:<br /> {ec.content}</Card.Text>
-  
+              <Card.Body>  
                 <Card.Text>
                   <span
                     className="bi bi-x-square"

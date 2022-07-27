@@ -11,8 +11,14 @@ import comp4 from './comp4.svg'
 function Home() {
   return (
     <>
-      <HomeArticles />
+      {/* <HomeArticles /> */}
       <Cards />
+      <div className="company">
+        <img className="companyImg" src={comp1}></img>
+        <img className="companyImg" src={comp2}></img>
+        <img className="companyImg" src={comp3}></img>
+        <img className="companyImg" src={comp4}></img>
+      </div>
       
     </>
   );

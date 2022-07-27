@@ -317,6 +317,29 @@ a {
 .cardTitleText1{
   text-transform: capitalize;
   font-size: 30px;
-
+  text-align: center;
   font-family: 'VT323', monospace;;
 }
+/* comments */
+.commentinput{
+  border-top: #ffffff;
+  border-left: #ffffff;
+  border-right: #ffffff;
+}
+
+.commentbody{
+ margin-bottom: 0px;
+color: rgb(50, 45, 94);
+margin-right: 50px;
+margin-left: 50px;
+
+
+}
+.commentbody{
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding-bottom: 10px;
+
+  margin-right: 50px;
+  margin-left: 50px;
+ }

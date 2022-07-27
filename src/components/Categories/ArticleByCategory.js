@@ -26,7 +26,14 @@ function ArticleByCategory() {
       });
   }, [id]);
 
-
+  // const SearchHandle = async (event) => {
+  //   let key = event.target.value;
+  //   let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
+  //   result = await result.json();
+  //   if (result) {
+  //     setData(result);
+  //   }
+  // };
   const Search = async (event) => {
     let key = event.target.value;
     axios
@@ -43,13 +50,12 @@ function ArticleByCategory() {
 
   return (
     <>
-    <div className="form-field col-lg-2">
       <input
         type=""
         className="search-box"
         placeholder="Search"
         onChange={Search}
-      /></div>
+      />
       <div
         className="row "
         style={{
@@ -86,9 +92,7 @@ function ArticleByCategory() {
                     View Articles
                   </Button>
                   <Card.Footer className="text-muted">
-
-                    Publisehd at: {e.created_at} by {e.user}
-
+                    {/* Publisehd at: {e.created_at} by {e.user.username} */}
                   </Card.Footer>
                 </Card.Body>
               </Card>
@@ -98,6 +102,10 @@ function ArticleByCategory() {
       </div>
     </>
   );
-      }
+
+}
+
+      
+
 
 export default ArticleByCategory;

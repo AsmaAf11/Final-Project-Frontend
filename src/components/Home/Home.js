@@ -15,8 +15,7 @@ import comp3 from "./comp3.svg";
 import comp4 from "./comp4.svg";
 import Footer from "./Footer";
 import SectionText from "./SectionText";
-import guide from "./guide.jpeg";
-
+import guide from "./guide2.jpg";
 
 function Home() {
   const { id } = useParams();
@@ -47,68 +46,77 @@ function Home() {
       {/* <Cards /> */}
 
       <br />
+      <div className="d-flex justify-content-around">
+        <Carousel
+          style={{
+            height: "400px",
+            width: "70%",
+          }}
+        >
+          {data.map((e) => {
+            return (
+              <Carousel.Item interval={2500}>
+                <img
+                  style={{ height: "400px", width: "100%", borderRadius: "2%" }}
+                  className="d-block w-100"
+                  src={e.image}
+                  alt="First slide"
+                  onClick={() => {
+                    navigate(`/articlesCategories/${e.id}`);
+                  }}
+                />
 
-      <Carousel style={{ height: "400px", width: "70%", marginLeft: "167px" , marginBottom: "40px"}}>
-        {data.map((e) => {
-          return (
-            <Carousel.Item interval={2500}>
-              <img
-                style={{ height: "400px", width: "100%" ,borderRadius:"2%"  }}
-                className="d-block w-100"
-                src={e.image}
-                alt="First slide"
-                onClick={() => {
-                  navigate(`/articlesCategories/${e.id}`);
-                }}
-              />
-
-              <Carousel.Caption
-                style={{
-                  position: "absolute",
-                  top: " 50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  opacity:"0.75",
-                  textTransform:"capitalize"
-                 
-                }}
-              >
-                <h1 style={{ textTransform:'capitalize' }}> {e.name}</h1>
-              </Carousel.Caption>
-            </Carousel.Item>
-          );
-        })}
-      </Carousel>
-    
-<div style={{marginBottom:'120px'}}></div>
-      <div style={{ height: "200px", width: "70%", marginLeft: "10%" }}>
-        <img src={guide} alt='m'></img>
+                <Carousel.Caption
+                  style={{
+                    position: "absolute",
+                    top: " 55%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    // opacity: "0.75",
+                    textTransform: "capitalize",
+                  }}
+                >
+                  <h1
+                    style={{
+                      textTransform: "capitalize",
+                      fontWeight: "bolder",
+                      backgroundColor: "rgba(83, 83, 83, 0.664)",
+                      padding: "10px 0px 10px 0px",
+                    }}
+                  >
+                    {" "}
+                    {e.name}
+                  </h1>
+                </Carousel.Caption>
+              </Carousel.Item>
+            );
+          })}
+        </Carousel>
       </div>
-      <div style={{marginTop:'180px'}}></div>
 
-
-
-      {/* <HomeArticles /> */}
-
-      {/* <HomeArticles /> */}
+      <div style={{ marginBottom: "120px" }}></div>
+      <div className='d-flex justify-content-around'>
+        <img src={guide} alt="guide"></img>
+      </div>
+      <div style={{ marginTop: "100px" }}></div>
 
       <br></br>
-      <div className="company">
-        <img className="companyImg" src={comp1} alt=' '></img>
+      <div className='d-flex justify-content-around'>
+        <img className="companyImg" src={comp1} alt=" "></img>
         <img
-        alt=' '
+          alt=" "
           className="companyImg"
           src={comp2}
           style={{ marginLeft: "50px" }}
         ></img>
         <img
-        alt=' '
+          alt=" "
           className="companyImg"
           src={comp3}
           style={{ marginLeft: "50px" }}
         ></img>
         <img
-        alt=' '
+          alt=" "
           className="companyImg"
           src={comp4}
           style={{ marginLeft: "50px" }}

@@ -11,49 +11,47 @@ function Header() {
       <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo} alt=" logo" style={{ hight: 150, width: 150 }} />
+            <img src={logo} alt=" logo" style={{ hight: 200, width: 200 }} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            {/*This totally empty navbar with the class 'me-auto' is significant. */}
             <Nav className="me-auto"></Nav>
-            {/*It is responsible for the other nav bar content moving to the right.*/}
-            <Nav>
-              <Nav.Link
+            <Nav className ='nav'>
+              <Nav.Link className="nav-item"
                 href="/"
                 style={{ color: "#545454", fontWeight: "bold" }}
               >
                 Home
               </Nav.Link>
-              <Nav.Link
+              <Nav.Link className="nav-item"
                 href="/categories"
                 style={{ color: "#545454", fontWeight: "bold" }}
               >
                 Categories
               </Nav.Link>
-              <Nav.Link
+              <Nav.Link className="nav-item"
                 href="/BookMark"
                 style={{ color: "#545454", fontWeight: "bold" }}
               >
                 Bookmark
               </Nav.Link>
-              <Nav.Link
+              <Nav.Link className="nav-item"
                 href="/PArticles"
                 style={{ color: "#545454", fontWeight: "bold" }}
               >
                 My Articles
               </Nav.Link>
-              <Nav.Link
+              <Nav.Link className="nav-item"
                 href="/signup"
                 style={{ color: "#545454", fontWeight: "bold" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="20"
+                  height="20"
                   fill="black"
                   classNameName="bi bi-person-plus-fill"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 20 20"
                 >
                   <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                   <path
@@ -62,14 +60,15 @@ function Header() {
                   />
                 </svg>
               </Nav.Link>
-              <Nav.Link href="/logout">
+              <Nav.Link className="nav-item"
+               href="/logout">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="20"
+                  height="20"
                   fill="black"
                   classNameName="bi bi-box-arrow-in-right"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 20 20"
                 >
                   <path
                     fillRule="evenodd"

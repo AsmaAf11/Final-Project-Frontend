@@ -94,7 +94,7 @@ function ArticleByCategory() {
                   src={e.image}
                 />
                 <Card.Body>
-                  <Card.Title className="cardTitleText">{e.title}</Card.Title>
+                  <Card.Title className="cardTitleText1">{e.title}</Card.Title>
                   <Card.Text className="cardParagraphText">
                     {e.summary}
                   </Card.Text>

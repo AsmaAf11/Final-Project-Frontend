@@ -57,14 +57,16 @@ function ArticleByCategory() {
         console.log(err);
       });
   };
+
   return (
     <>
+    <div className="form-field col-lg-2">
       <input
         type=""
         className="search-box"
         placeholder="Search"
         onChange={Search}
-      />
+      /></div>
       <div
         className="row "
         style={{
@@ -116,7 +118,7 @@ function ArticleByCategory() {
                     View Articles
                   </Button>
                   <Card.Footer className="text-muted">
-                    Publisehd at: {e.created_at} by {e.user.username}
+                    Publisehd at: {e.created_at} by {e.user}
                   </Card.Footer>
                 </Card.Body>
               </Card>

@@ -73,12 +73,14 @@ function Home() {
       {/* <HomeArticles /> */}
 
       <Cards />
+      <br></br>
       <div className="company">
         <img className="companyImg" src={comp1} ></img>
         <img className="companyImg" src={comp2} style={{marginLeft:'50px'}} ></img>
         <img className="companyImg" src={comp3} style={{marginLeft:'50px'}}></img>
         <img className="companyImg" src={comp4} style={{marginLeft:'50px'}}></img>
       </div>
+      <br></br>
     </>
   );
 }

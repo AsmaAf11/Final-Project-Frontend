@@ -36,11 +36,23 @@ function PArticles() {
   // }, []);
 
   return (
-    <div>
+    <div
+      className="row "
+      style={{
+        width: "80%",
+        height: "100%",
+        textAlign: "center",
+        position: "relative",
+        margin: "0 auto",
+      }}
+    >
       {data.map((e) => {
         return (
-          <Container className="pt-5">
-            <Card style={{ width: "18rem" }}>
+          <div className="col-8 col-md-6">
+            <Card
+              style={{ width: "28rem", marginBottom: "20px" }}
+              className="border-dark"
+            >
               <Card.Img
                 style={{ width: "100%", height: "350px" }}
                 variant="top"
@@ -53,6 +65,7 @@ function PArticles() {
                   onClick={() => {
                     navigate(`/ViewDetails/${e.id}`);
                   }}
+                  style={{ marginLeft: 10, width: "110px" }}
                 >
                   View
                 </Button>
@@ -61,7 +74,7 @@ function PArticles() {
                   onClick={() => {
                     navigate(`/UpdateArticle/${e.id}`);
                   }}
-                  style={{ marginLeft: 10 }}
+                  style={{ marginLeft: 10, width: "110px" }}
                 >
                   Update
                 </Button>
@@ -69,14 +82,14 @@ function PArticles() {
                   onClick={() => {
                     navigate(`/DeleteArticle/${e.id}`);
                   }}
-                  style={{ marginLeft: 10 }}
+                  style={{ marginLeft: 10, width: "110px" }}
                 >
                   Delete
                 </Button>
                 {/* </Link */}
               </Card.Body>
             </Card>
-          </Container>
+          </div>
         );
       })}
     </div>

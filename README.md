@@ -1,52 +1,19 @@
-# pages
 
-## Main Pages:
+# Knowldege Hub
 
-#### Home
-##### what needs to be added:
+## Description
+Nowadays it is hard to find reliable sources for articles and it might be so long to read. Therefore, our website provides summariziton for the articles that were added by trusted publishers. The articles that interests the user can be added to thier bookmark. Also they can add catogries to thier favorites to always keep up with topics of thier interest.
+#### Team members names and Github accounts
+- Asma Abufayah:
+	- https://github.com/AsmaAf11
+- Bushra Alzahrani:
+	- https://github.com/BushraAlzahrani
+- Emtinan Alharbi
+	- https://github.com/Emtinan98
+- Wafa Alrizqi
+	- https://github.com/wafa-alrizqi
 
-- styling the page layout 
+#### Deployment link
+https://knowledge-finalss.herokuapp.com/
 
-------------
-
-### Categories:
-##### what needs to be added:
-
-- styling the page layout 
-
-- add favourite category **endpoint** (http://127.0.0.1:8000/add_favCategory/)
-
-------------
-
-#### View Article Details
-##### what needs to be added:
--  styling the page 
-
-##### Not Working right:
-- delete comment: anyone can delete 
-
-- add to bookmark: error not adding 
-
-------------
-
-## User Pages:
-
-#### BookMarks
-##### what needs to be added:
-- styling the page
-
-##### Not Working right:
- 
-- deleting works but the page becomes empty and needs refresh
-
-
-------------
-
-## Publisher Pages
-#### My Articles
-##### what needs to be added:
-- styling the page
-
-##### Not Working right:
-
-- update article ?
+#### Images/Screenshots of the project

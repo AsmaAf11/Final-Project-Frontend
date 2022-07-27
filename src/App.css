@@ -225,22 +225,7 @@ a {
 
   text-align: justify;
 }
-.cardlikeimg {
-  padding-right: 5px;
-  height: 25px;
-  width: 25px;
-}
-.likeborder {
-  border-collapse: separate;
-  border: solid black 1px;
-  border-radius: 10%;
-  color: black;
-  padding-right: 5px;
-  padding-left: 5px;
-  padding-top: 2px;
-  padding-bottom: 0px;
-  background-color: white;
-}
+
 
 .clickonimg {
   cursor: pointer;
@@ -267,14 +252,15 @@ a {
   outline: none;
 }
 .company{
-  justify-content: space-around;
-  align-items: center;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
 }
 .companyImg{
   height:100px;
   width: 180px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-around !important;
   justify-items: center;
   
 }
@@ -300,5 +286,37 @@ a {
 .cardTitle{
   text-transform: capitalize;
   font-size: 30px;
+  font-family: 'VT323', monospace;;
+}
+
+
+
+.catagoryToArticleButton{
+  background-color:rgb(28, 21, 68) !important;
+  padding:10px;
+  padding-left:80px;
+  padding-right:80px;
+
+  border-radius:6%;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  color: white;
+  font-weight: bold;
+
+}
+.ArticleImg:hover{
+  
+  transform: scale(1.0);
+}
+
+.cardBorder{
+  border:#050405 1px solid;
+ 
+}
+
+.cardTitleText1{
+  text-transform: capitalize;
+  font-size: 30px;
+
   font-family: 'VT323', monospace;;
 }

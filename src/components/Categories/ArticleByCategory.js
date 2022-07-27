@@ -26,14 +26,7 @@ function ArticleByCategory() {
       });
   }, [id]);
 
-  // const SearchHandle = async (event) => {
-  //   let key = event.target.value;
-  //   let result = await fetch(`http://127.0.0.1:8000/search1/${key}`);
-  //   result = await result.json();
-  //   if (result) {
-  //     setData(result);
-  //   }
-  // };
+
   const Search = async (event) => {
     let key = event.target.value;
     axios
@@ -47,9 +40,12 @@ function ArticleByCategory() {
       });
   };
   
+     
 
   return (
     <>
+
+
       <input
         type=""
         className="search-box"
@@ -66,33 +62,36 @@ function ArticleByCategory() {
           margin: "0 auto",
         }}
       >
+
+
         {data?.map((e) => {
           return (
-            <div className="col-8 col-md-6">
-              <Card
+            <div className="col-8 col-md-6" style={{marginTop:'30px'}}>
+              <Card 
                 style={{ width: "28rem", marginBottom: "20px" }}
-                className="border-light"
+                className="cardBorder" 
               >
-                <Card.Img
-                  style={{ width: "100%", height: "350px" }}
+                <Card.Img className="ArticleImg"
+                  style={{ width: "100%", height: "250px" }}
                   variant="top"
                   src={e.image}
                 />
                 <Card.Body>
-                  <Card.Title className="cardTitleText">{e.title}</Card.Title>
+                  <Card.Title className="cardTitleText1">{e.title}</Card.Title>
                   <Card.Text className="cardParagraphText">
                     {e.summary}
                   </Card.Text>
-                  
-                  <Button
+                 
+                  <br />
+                  <button className="catagoryToArticleButton"
                     onClick={() => {
                       navigate(`/ViewDetails/${e.id}`);
                     }}
                   >
                     View Articles
-                  </Button>
+                  </button>
                   <Card.Footer className="text-muted">
-                    {/* Publisehd at: {e.created_at} by {e.user.username} */}
+                    Publisehd at: {e.created_at} by {e.username}
                   </Card.Footer>
                 </Card.Body>
               </Card>

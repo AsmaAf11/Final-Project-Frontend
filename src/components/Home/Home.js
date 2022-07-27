@@ -3,18 +3,17 @@ import Cards from "../Categories/Cards";
 import PArticles from "../Article/PArticles";
 import BookMark from "../BookMark/BookMark.js";
 import HomeArticles from "../Article/HomeArticles";
-
 import Carousel from 'react-bootstrap/Carousel';
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, Container, Button } from "react-bootstrap";
-
 import comp1 from './comp1.svg'
 import comp2 from './comp2.svg'
 import comp3 from './comp3.svg'
 import comp4 from './comp4.svg'
+import Footer from "./Footer";
 
 
 function Home() {
@@ -74,13 +73,14 @@ function Home() {
       {/* <HomeArticles /> */}
 
       <Cards />
+      <br></br>
       <div className="company">
-        <img className="companyImg" src={comp1}></img>
-        <img className="companyImg" src={comp2}></img>
-        <img className="companyImg" src={comp3}></img>
-        <img className="companyImg" src={comp4}></img>
+        <img className="companyImg" src={comp1} ></img>
+        <img className="companyImg" src={comp2} style={{marginLeft:'50px'}} ></img>
+        <img className="companyImg" src={comp3} style={{marginLeft:'50px'}}></img>
+        <img className="companyImg" src={comp4} style={{marginLeft:'50px'}}></img>
       </div>
-      
+      <br></br>
     </>
   );
 }

@@ -46,12 +46,12 @@ function Home() {
 
       <br />
 
-      <Carousel style={{ height: "400px", width: "70%", marginLeft: "17%" }}>
+      <Carousel style={{ height: "400px", width: "70%", marginLeft: "167px" , marginBottom: "40px"}}>
         {data.map((e) => {
           return (
             <Carousel.Item interval={1000}>
               <img
-                style={{ height: "400px", width: "100%" }}
+                style={{ height: "400px", width: "100%" ,borderRadius:"2%"  }}
                 className="d-block w-100"
                 src={e.image}
                 alt="First slide"
@@ -66,9 +66,12 @@ function Home() {
                   top: " 50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
+                  opacity:"0.75",
+                  textTransform:"capitalize"
+                 
                 }}
               >
-                <h3> {e.name}</h3>
+                <p style={{ fontSize:"60px"}}> {e.name}</p>
               </Carousel.Caption>
             </Carousel.Item>
           );

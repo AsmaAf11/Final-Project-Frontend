@@ -37,23 +37,24 @@ function Signup() {
     // </div>
     <>
 
-<section className="background-radial-gradient overflow-hidden form-style ">
-  
+<section >
 
   <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
     <div className="row gx-lg-5 align-items-center mb-5">
-      <div className="col-lg-6 mb-5 mb-lg-0" >
-        <h1 className="my-5 display-5 fw-bold ls-tight" >
-          The best offer <br />
-          <span >for your business</span>
-        </h1>
-        <p className="mb-4 opacity-70">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Temporibus, expedita iusto veniam atque, magni tempora mollitia
-          dolorum consequatur nulla, neque debitis eos reprehenderit quasi
-          ab ipsum nisi dolorem modi. Quos?
-        </p>
-      </div>
+    <div className="col-lg-6 mb-5 mb-lg-0">
+              <span
+                className="my-5 display-5 fw ls-tight"
+                style={{ color: "#545454" }}
+              >
+                Welcome to <br />
+              </span>
+              <span style={{ fontSize: "60px", color: "#545454" }}>
+                Knowledge Hub
+              </span>{" "}
+              <hr></hr>
+              {/* <span><img src={logo} alt='logo'></img></span> <hr /> */}
+              <p className="mb-4 opacity-70"></p>
+            </div>
 
       <div className="col-lg-6 mb-5 mb-lg-0 position-relative">
         <div id="radius-shape-1" className="position-absolute rounded-circle shadow-5-strong"></div>
@@ -70,12 +71,25 @@ function Signup() {
               
                 <input type="password"  className="form-control" onChange={(e)=>{setPassword(e.target.value)}}/>
                 <label className="form-label">Password</label>
+                <br></br>
+                  <button
+                    type="button"
+                    className="btn btn-outline-primary"
+                    data-mdb-ripple-color="dark"
+                    style={{
+                      marginRight: "10px",
+                      width: "100px",
+                      fontWeight: "bold",
+                    }}
+                    onClick={postData}                  >
+                    Register
+                  </button>
              
               </div>
-              <div className="text-center">
+              {/* <div className="text-center">
               <button type="submit" className="btn btn-primary btn-block mb-4" onClick={postData}>
                 Sign up
-              </button></div>
+              </button></div> */}
           </div>
         </div>
       </div>

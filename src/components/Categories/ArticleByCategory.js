@@ -45,13 +45,13 @@ function ArticleByCategory() {
   return (
     <>
 
-
+<div style={{margin:"30px"}}>
       <input
         type=""
         className="search-box"
         placeholder="Search"
         onChange={Search}
-      />
+      /></div>
       <div
         className="row "
         style={{

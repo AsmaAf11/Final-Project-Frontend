@@ -37,23 +37,28 @@ function Home() {
     <>
     <br/>
  
-    <Carousel variant="dark" style={{height:'400px',width:'70%',marginLeft:'250px',marginRight:'100px'}} >
+    <Carousel style={{height:'400px',width:'70%',marginLeft:'250px',marginRight:'100px'}}>
     {data.map((e) => {
         return (
-      <Carousel.Item>
+      <Carousel.Item interval={1000}>
         <img style={{height:'400px',width:'100%'}}
+          className="d-block w-100"
           src={e.image}
           alt="First slide"
           onClick={() => {
             navigate(`/articlesCategories/${e.id}`);
           }}
         />
-        <Carousel.Caption>
-          <h5>{e.name}</h5>
-          
+        
+        <Carousel.Caption style={{ position: 'absolute',
+  top:' 50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)'}}>
+          <h3>   {e.name}</h3>
+       
         </Carousel.Caption>
       </Carousel.Item>
-        )})}
+      )})}
     </Carousel>
       <HomeArticles />
       <Cards />

@@ -30,7 +30,7 @@ function Cards() {
       .post(`http://127.0.0.1:8000/add_favCategory/${idCategory}/`, {}, config)
       .then((res) => {
         console.log(res.data);
-        alert("added");
+        // alert("added");
         // window.location.reload();
       })
       .catch((error) => {
@@ -55,7 +55,6 @@ function Cards() {
         {data.map((e) => {
           return (
             <div className="col-8 col-md-6">
-              {/* <Card style={{width:'100%',height:'100px',display:'inline-block',lineHeight:'100px',backgroundColor:'white',marginBottom:'30px'}}className="border-dark"> */}
               <Card
                 style={{ width: "28rem", marginBottom: "20px" }}
                 className="border-dark"
@@ -81,7 +80,6 @@ function Cards() {
                   onClick={() => {
                     setIdCategory(e.id);
                     addFavCategory();
-                    alert("added");
                   }}
                 >
                   <img

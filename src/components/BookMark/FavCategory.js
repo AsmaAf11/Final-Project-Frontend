@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import PArticles from "../Article/PArticles";
 import { Card, Container, Button } from "react-bootstrap";
-import removefav from './removefav.png'
-
 
 function FavCategory() {
   const { id } = useParams();
@@ -31,7 +30,6 @@ function FavCategory() {
       });
   }, []);
 
-
   const deleteFav = () => {
     axios
       .delete(
@@ -49,44 +47,61 @@ function FavCategory() {
   };
 
   return (
-    <div style={{width:'80%',height:'100%',textAlign:'center',position:'relative',margin:'0 auto'}}>
-    {data.map((e) => {
-      return (
-        <div className="col-8 col-md-6">
-          
-            <Card style={{ width: "28rem" ,  marginBottom:'20px'}} className="border-dark shadow">
-            <div className="categoryimg clickonimg"
-            onClick={() => {
-              navigate(`/articlesCategories/${e.id}`);
-            }}
-          >
-              <Card.Img
-                style={{ width: "100%", height: "200px" }}
-                variant="top"
-                src={e.category.image}
-              />
-              </div>
-              <Card.Body
-             style={{ width: "100%", height: "1px" }}>
-                <Card.Title  className="cardTitle" >{e.category.name}</Card.Title>
-              </Card.Body>
-              
-              <div className="d-flex p-2"   
-          onClick={()=>{
-                 setDeleteFavCategory(e.id);
-                 deleteFav();
-                alert('added')}
-                       } ><img  className="clickonimg" style={{  height: "40px" ,backgroundColor:"white"}} src={removefav}/></div>
-
-             
-            </Card>
-        </div>
-      );
-    })}
-  </div>
+    <>
+      <h4 style={{ margin: "100px 0 20px 80px",color: "#545454" }}>I'm Interested in ..</h4>
+      <div
+        className="row"
+        style={{
+          width: "100%",
+          height: "100%",
+          textAlign: "center",
+          position: "relative",
+          margin: "0 auto",
+        }}
+      >
+        {data.map((e) => {
+          return (
+            <div className="col-6 col-md-4" style={{marginLeft:'70px'}}
+            >
+              {/* <Card style={{width:'100%',height:'100px',display:'inline-block',lineHeight:'100px',backgroundColor:'white',marginBottom:'30px'}}className="border-dark"> */}
+              <Card
+                style={{ marginBottom: "20px" , justifyContent:'space-around'}}
+                className="border-dark"
+              >
+                <div
+                  onClick={() => {
+                    navigate(`/articlesCategories/${e.category.id}`);
+                  }}
+                >
+                  <Card.Img
+                    style={{ width: "100%", height: "200px" }}
+                    variant="top"
+                    src={e.category.image}
+                  />
+                </div>
+                <Card.Body style={{ width: "100%", height: "100px" }}>
+                  <Card.Title>
+                    <h5 style={{textTransform:'capitalize'}}>{e.category.name}</h5>
+                  </Card.Title>
+                  <Card.Text>
+                    <Button
+                      className="btn btn-danger"
+                      onClick={() => {
+                        setDeleteFavCategory(e.id);
+                        deleteFav();
+                      }}
+                    >
+                      Unfavourite
+                    </Button>{" "}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
-
 export default FavCategory;
-

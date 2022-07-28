@@ -94,11 +94,11 @@ export default function ViewDetails() {
     
     const addBookmark = () => {
       axios
-        .post(`http://127.0.0.1:8000/add_bookmark/${id}/`, config)
+        .post(`http://127.0.0.1:8000/add_bookmark/${id}/`,{}, config)
         .then((res) => {
           console.log(res.data);
-          alert('added successfuly')
-          window.location.reload();
+          // alert('added successfuly')
+          // window.location.reload();
         })
         .catch((error) => {
           console.log(error);

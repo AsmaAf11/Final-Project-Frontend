@@ -41,11 +41,18 @@ function Home() {
 
   return (
     <>
-      <SectionText />
-      {/* <HomeArticles /> */}
-      {/* <Cards /> */}
+      <div style={{ marginBottom: "100px" }}></div>
+      <div className="d-flex justify-content-around">
+        <SectionText />
+      </div>
+      <div style={{ marginTop: "100px" }}></div>
 
       <br />
+      <div>
+        <h3 style={{ textTransform: "uppercase" }} className="d-flex justify-content-around mb-5">
+          Article Categories
+        </h3>
+      </div>
       <div className="d-flex justify-content-around">
         <Carousel
           style={{
@@ -95,13 +102,13 @@ function Home() {
       </div>
 
       <div style={{ marginBottom: "120px" }}></div>
-      <div className='d-flex justify-content-around'>
+      <div className="d-flex justify-content-around">
         <img src={guide} alt="guide"></img>
       </div>
       <div style={{ marginTop: "100px" }}></div>
 
       <br></br>
-      <div className='d-flex justify-content-around'>
+      <div className="d-flex justify-content-around">
         <img className="companyImg" src={comp1} alt=" "></img>
         <img
           alt=" "

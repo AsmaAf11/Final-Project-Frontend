@@ -58,14 +58,14 @@ To find out the newest and most correct articles, register with us to keep up wi
 
               <ul className="list-unstyled mb-0">
                 <li>
-                  <p href="#!" className="text-white" style={{textAlign:"left"}}>
+                  <a href="/signup" className="text-white" style={{textAlign:"left",textDecoration:'none'}}>
                     Sign Up
-                  </p>
+                  </a>
                 </li>
                 <li>
-                  <p href="#!" className="text-white" style={{textAlign:"left"}}>
+                  <a href="/login" className="text-white" style={{textAlign:"left" , textDecoration:'none'}}>
                     Login
-                  </p>
+                  </a>
                 </li>
               </ul>
               

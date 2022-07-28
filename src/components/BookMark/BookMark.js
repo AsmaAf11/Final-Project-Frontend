@@ -45,12 +45,15 @@ function BookMark() {
         console.log(error);
       });
   };
-  if (data.length === 0) {
+  if (data.length === 0 ) {
     return (
+      <>
+      <div style={{ marginBottom: "100px" }}></div>
+      <div className="d-flex justify-content-around">
       <section className=" mt-5 mb-5 text-center">
         <div className="container">
-          <h2 style={{ fontWeight: "bolder" }}>Your BookMark is Empty !</h2>
-          <p className="lead text">
+          <h2 className='mb-5' style={{ fontWeight: "bolder" }}>Your BookMark is Empty !</h2>
+          <p className="lead text mb-5">
             You can Track on your interests without having to read everything.
             <br /> Reading brief articles from news sites, newsletters, and
             other sources can help you stay up to date on your interests.
@@ -58,13 +61,10 @@ function BookMark() {
           <p>
             <a
               type="button"
-              className="btn btn-outline-success"
+              className="btn btn-outline-primary custom-btn"
               data-mdb-ripple-color="dark"
-              style={{
-                marginRight: "10px",
-                width: "200px",
-                fontWeight: "bold",
-              }}
+              style={{ marginRight: "10px", width: "300px" ,fontWeight: "bold", fontSize:'x-large' }}
+
               href="/categories"
             >
               Go To Categories
@@ -72,6 +72,9 @@ function BookMark() {
           </p>
         </div>
       </section>
+      </div>
+      <div style={{ marginTop: "100px" }}></div>
+      </>
     );
   } else {
 

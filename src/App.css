@@ -24,7 +24,11 @@ body {
 .nav-item:hover {
   transition: 0.3s ease-out;
   /* padding: 6px 0; */
-  color: black !important;
+  /* color: black !important; */
+  color: #3940d4;
+  background: linear-gradient(to right, #608aa7 0%, #3940d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 svg:hover {
   width: "135"!important ;
@@ -306,7 +310,7 @@ a {
   padding: 50px;
 }
 .bookmark-img {
-  height: 60px;
+  height: 40px;
   cursor: pointer;
 }
 

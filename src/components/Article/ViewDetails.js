@@ -132,8 +132,12 @@ export default function ViewDetails() {
                   <br /> {e.content}
                 </p>
                 <p className="cardParagraphText">
-                  Summary:
+                  <b>Summary:</b>
                   <br /> {e.summary}
+                </p>
+                <p className="cardParagraphText">
+                <b>Reference:</b>
+                  <br /> {e.reference}
                 </p>
                 <p className="text-muted">
                   Publisehd at: {e.created_at} by {e.username}
@@ -144,37 +148,6 @@ export default function ViewDetails() {
         );
       })}
 
-            {/* add comment */}
-            {/* <section className="add_article">
-        <h1 className="title"> Add Comment</h1>
-        <div className="container">
-          <div className="add-form row">
-            <div className="form-field col-lg-6">
-              <input
-                id="content"
-                className="input-text"
-                type={"text"}
-                onChange={(e) => {
-                  setContent(e.target.value);
-                }}
-              ></input>
-              <label htmlFor="content" className="label">
-                Comment:
-              </label>
-            </div>
-
-            <div className="form-field text-center">
-              <input
-                className="submit-btn"
-                type={"submit"}
-                value="Add Comment"
-                onClick={addComment}
-              ></input>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      
       <Container className="commentbody1">
             <Card className="commentbody">
               <Card.Body> 
@@ -187,23 +160,24 @@ export default function ViewDetails() {
 
                 <Card.Text className="cardParagraphText">
                   <br />  <div className="form-field col-lg-6">
-              <input
+              <textarea
                 id="content"
                 placeholder="comment here"
                 className="commentinput"
-                type={"text"}
+                type={'text'}
 
                 onChange={(e) => {
                   setContent(e.target.value);
                 }}
-              ></input>
+              ></textarea>
             </div>
                 </Card.Text>
-		        <div className="form-field text-center">
+		        <div className="form-field ">
               <input
-              style={{padding:'1px',paddingLeft:'10px',paddingRight:'10px',fontSize:'15px'}}
-                className="catagoryToArticleButton"
-                type={"submit"}
+              // style={{padding:'1px',paddingLeft:'10px',paddingRight:'10px',fontSize:'15px'}}
+              style={{ marginRight: "10px", width: "50px" ,fontWeight: "bold" }}
+              className="btn btn-outline-primary custom-btn"
+              type={"submit"}
                 value="Add Comment"
                 onClick={addComment}
               ></input></div>

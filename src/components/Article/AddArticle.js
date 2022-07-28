@@ -46,11 +46,12 @@ export default function AddArticle() {
   return (
     <>
       <section className="add_article ">
-        <h1 className="title"> Add Article</h1>
+        <h1 className="reg-title"> Add Article</h1>
         <div className="container">
           <div className="add-form row">
             <div className="form-field col-lg-6">
               <input
+                placeholder="Article Title *"
                 id="title"
                 className="input-text"
                 type={"text"}
@@ -64,6 +65,7 @@ export default function AddArticle() {
             </div>
             <div className="form-field col-lg-6">
               <input
+                placeholder="Article Image URL *"
                 id="image"
                 className="input-text"
                 type={"url"}
@@ -77,6 +79,7 @@ export default function AddArticle() {
             </div>
             <div className="form-field col-lg-6">
               <input
+                placeholder="Article Reference URL *"
                 id="reference"
                 className="input-text"
                 type={"url"}
@@ -99,7 +102,7 @@ export default function AddArticle() {
                 }}
               >
                 <option disabled value="Category">
-                  Select
+                  Select Article Category
                 </option>
                 <option value="7">Food Drink</option>
                 <option value="6">Entertainment</option>
@@ -130,6 +133,7 @@ export default function AddArticle() {
 
             <div className="form-field col-lg-12">
               <textarea
+                placeholder="Article Summary *"
                 id="summary"
                 className="input-text"
                 type={"text"}
@@ -143,6 +147,7 @@ export default function AddArticle() {
             </div>
             <div className="form-field col-lg-12">
               <textarea
+                placeholder="Article Content *"
                 id="content"
                 className="input-text"
                 type={"text"}

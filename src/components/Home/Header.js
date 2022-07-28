@@ -8,7 +8,7 @@ import logo from "./knowledge_hub_logo.png";
 function Header() {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
+      <Navbar collapseOnSelect expand="lg" bg="white" variant="light" style={{  boxShadow:'0 2px 4px 0 rgba(57,64,212,.4) '}}>
         <Container>
           <Navbar.Brand href="/">
             <img src={logo} alt=" logo" style={{ hight: 200, width: 200 }} />

@@ -36,7 +36,7 @@ export default function AddArticle() {
       )
       .then((res) => {
         console.log(res);
-        navigate("/");
+        navigate("/PArticles");
       })
       .catch((error) => {
         console.log(error);

@@ -116,6 +116,7 @@ export default function ViewDetails() {
                 style={{ width: "100%", height: "450px" }}
                 variant="top"
                 src={e.image}
+                alt=' '
               />
               
              
